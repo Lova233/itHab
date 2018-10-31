@@ -1,0 +1,32 @@
+.habit-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30%;
+
+}
+#habit-one{
+  width: 70px;
+  height: 70px;
+  background-color: #9233A3;
+}
+#habit-two{
+  width: 70px;
+  height: 70px;
+  background-color: #FF0000;
+}
+#habit-three{
+  width: 70px;
+  height: 70px;
+  background-color: #F67400;
+}
+#habit-four{
+  width: 70px;
+  height: 70px;
+  background-color: #EAFF56;
+}
+#habit-five{
+  width: 70px;
+  height: 70px;
+  background-color: #00B757;
+}
