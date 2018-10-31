@@ -1,0 +1,19 @@
+.setting{
+  position: relative;
+  right: 10px;
+}
+
+.menu-left{
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  align-content: center;
+  justify-content: space-between;
+}
+
+mat-toolbar{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
