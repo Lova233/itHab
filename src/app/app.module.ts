@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { DashboardComponent } from './containers/dashboard/dashboard.component';
 
 
 
@@ -17,7 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
   declarations: [
     AppComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
