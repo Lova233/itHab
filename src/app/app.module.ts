@@ -13,6 +13,7 @@ import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PastComponent } from './past/past.component';
 
 
 
@@ -22,7 +23,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     AppComponent,
     SignupComponent,
     SigninComponent,
-    DashboardComponent
+    DashboardComponent,
+    PastComponent
   ],
   imports: [
     BrowserModule,
