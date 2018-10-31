@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { PastComponent } from './past/past.component';
 import { PresentComponent } from './present/present.component';
 import { FutureComponent } from './future/future.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -28,7 +29,8 @@ import { FutureComponent } from './future/future.component';
     DashboardComponent,
     PastComponent,
     PresentComponent,
-    FutureComponent
+    FutureComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
