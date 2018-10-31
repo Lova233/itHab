@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PastComponent } from './past/past.component';
+import { PresentComponent } from './present/present.component';
 
 
 
@@ -24,7 +25,8 @@ import { PastComponent } from './past/past.component';
     SignupComponent,
     SigninComponent,
     DashboardComponent,
-    PastComponent
+    PastComponent,
+    PresentComponent
   ],
   imports: [
     BrowserModule,
