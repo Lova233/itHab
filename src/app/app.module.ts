@@ -18,6 +18,8 @@ import { PresentComponent } from './present/present.component';
 import { FutureComponent } from './future/future.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 
@@ -41,7 +43,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSelectModule,
     MatMenuModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FontAwesomeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
