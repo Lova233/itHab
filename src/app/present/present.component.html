@@ -1,12 +1,28 @@
-<div class="component-contatiner">
+<div class="component-contatiner-col" *ngIf="!habitOne">
+  <div class="internal-container">
   <h1>Your habits</h1>
-    <div class="habit-container">
-  
-        <div id="habit-one"></div>
+      <div class="habit-container">
+        <div id="habit-one" (click)="showHabitOne()"></div>
         <div id="habit-two"></div>
         <div id="habit-three"></div>
         <div id="habit-four"></div>
         <div id="habit-five"></div>
-
+      </div>
     </div>
+</div>
+
+<div class="component-contatiner-col" *ngIf="habitOne">
+  <div class="internal-container">
+    <fa-icon class="close" (click)="closeHabit()" [icon]="faTimes"></fa-icon>
+  <h1>Tell me about this.</h1>
+    <div class="habit-container">
+        <div id="habit-one"></div>
+        <mat-form-field>
+          <input matInput placeholder="Description">
+        </mat-form-field>      
+        <mat-form-field>
+          <input matInput placeholder="Frequency">
+        </mat-form-field>
+    </div>
+  </div>
 </div>
