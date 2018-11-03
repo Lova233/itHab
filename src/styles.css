@@ -9,9 +9,10 @@
 
 /*GLOBAL CONTAINER AND ALIGNER */
 
-.component-contatiner{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  }
+
+  .component-contatiner-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }  
