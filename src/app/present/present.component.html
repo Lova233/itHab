@@ -1,22 +1,18 @@
-<div class="component-contatiner-col" *ngIf="!habitOne">
+<div class="component-contatiner-col" *ngIf="!habitSelected">
   <div class="internal-container">
   <h1>Your habits</h1>
       <div class="habit-container">
-        <div id="habit-one" (click)="showHabitOne()"></div>
-        <div id="habit-two"></div>
-        <div id="habit-three"></div>
-        <div id="habit-four"></div>
-        <div id="habit-five"></div>
+        <div *ngFor="let habit of habits" id="habit-{{habit.num}}" (click)="showHabit(habit)"></div>
       </div>
     </div>
 </div>
 
-<div class="component-contatiner-col" *ngIf="habitOne">
+<div class="component-contatiner-col" *ngIf="habitSelected">
   <div class="internal-container">
     <fa-icon class="close" (click)="closeHabit()" [icon]="faTimes"></fa-icon>
   <h1>Tell me about this.</h1>
     <div class="habit-container">
-        <div id="habit-one"></div>
+        <div id="habit-{{habitSelected.num}}"></div>
         <mat-form-field>
           <input matInput placeholder="Description">
         </mat-form-field>      

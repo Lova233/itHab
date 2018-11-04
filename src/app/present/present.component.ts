@@ -9,21 +9,28 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 })
 export class PresentComponent implements OnInit {
 
-  habitOne:boolean;
+  habits:any;
+  habitSelected:any;
   faTimes = faTimes;
 
   constructor() { }
 
   ngOnInit() {
+    this.habits = [
+      { num: "one"},
+      { num: "two"},
+      { num: "three"},
+      { num: "four"},
+      { num: "five"}
+    ]
   }
 
 
-  showHabitOne(){
-    this.habitOne = true;
+  showHabit(habit){
+    this.habitSelected = habit;
   }
 
   closeHabit(){
-    this.habitOne = false;
-    console.log(this.habitOne)
+    this.habitSelected = undefined;
   }
 }
