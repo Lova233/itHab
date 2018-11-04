@@ -3,8 +3,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -13,10 +13,10 @@ import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { PastComponent } from './past/past.component';
-import { PresentComponent } from './present/present.component';
-import { FutureComponent } from './future/future.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { PastComponent } from './containers/past/past.component';
+import { PresentComponent } from './containers/present/present.component';
+import { FutureComponent } from './containers/future/future.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
