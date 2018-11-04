@@ -19,6 +19,8 @@ import { FutureComponent } from './containers/future/future.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HabitsComponent } from './habits/habits.component';
+import { HabitsPatternComponent } from './habits-pattern/habits-pattern.component';
 
 
 
@@ -32,7 +34,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PastComponent,
     PresentComponent,
     FutureComponent,
-    NavbarComponent
+    NavbarComponent,
+    HabitsComponent,
+    HabitsPatternComponent
   ],
   imports: [
     BrowserModule,
