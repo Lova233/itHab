@@ -21,6 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HabitsComponent } from './components/habits/habits.component';
 import { HabitsPatternComponent } from './components/habits-pattern/habits-pattern.component';
+import { HabitsCompleteComponent } from './habits-complete/habits-complete.component';
 
 
 
@@ -36,7 +37,8 @@ import { HabitsPatternComponent } from './components/habits-pattern/habits-patte
     FutureComponent,
     NavbarComponent,
     HabitsComponent,
-    HabitsPatternComponent
+    HabitsPatternComponent,
+    HabitsCompleteComponent
   ],
   imports: [
     BrowserModule,
