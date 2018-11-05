@@ -1,6 +1,6 @@
 <app-habits *ngIf="!isPatternOn" ></app-habits>
 <app-habits-pattern *ngIf="isPatternOn"></app-habits-pattern>
 <div class="switch">
-<h4 class="show" *ngIf="!isPatternOn"  (click)="showPattern()">check your habits</h4>
-<h4 class="show" *ngIf="isPatternOn"   (click)="showPattern()">check your pattern</h4>
+<h4 class="show" *ngIf="isPatternOn"  (click)="showPattern()">check your habits</h4>
+<h4 class="show" *ngIf="!isPatternOn"   (click)="showPattern()">check your pattern</h4>
 </div>
