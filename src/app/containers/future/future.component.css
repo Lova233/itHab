@@ -1,3 +1,9 @@
 .show{
   cursor: pointer;
 }
+
+.switch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

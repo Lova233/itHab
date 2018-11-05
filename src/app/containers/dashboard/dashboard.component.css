@@ -17,3 +17,7 @@ app-present{
   align-items: center;
   justify-content: center;
 }
+
+h5{
+  cursor: pointer;
+}

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  isFutureOn:boolean
+
   constructor() { }
 
   ngOnInit() {
+    this.isFutureOn = true;
+  }
+
+  showFuture(){
+    this.isFutureOn = !this.isFutureOn;
   }
 
 }
