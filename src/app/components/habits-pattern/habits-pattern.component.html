@@ -1,3 +1,51 @@
-<p>
-  habits-pattern works!
-</p>
+<div class="component-contatiner-col" *ngIf="!habitSelected">
+  <div class="internal-container">
+  <h1>Your habits Pattern</h1>
+      <div class="habit-container">
+
+      <div class="days">
+        <h5>Mon</h5>
+        <div *ngFor="let habit of habits">
+            <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(1)"></div>
+        </div>
+      </div>
+      
+      <div class="days">
+          <h5>Tue</h5>
+          <div *ngFor="let habit of habits">
+              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(2)"></div>
+          </div>
+      </div>
+      <div class="days">
+          <h5>Wed</h5>
+          <div *ngFor="let habit of habits">
+              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(3)"></div>
+          </div>
+      </div>
+      <div class="days">
+          <h5>Thu</h5>
+          <div *ngFor="let habit of habits">
+              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(4)"></div>
+          </div>
+      </div>
+      <div class="days">
+          <h5>Fri</h5>
+          <div *ngFor="let habit of habits">
+              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(5)"></div>
+          </div>
+      </div>
+      <div class="days">
+          <h5>Sat</h5>
+          <div *ngFor="let habit of habits">
+              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(6)"></div>
+          </div>
+      </div>
+      <div class="days">
+          <h5>Sun</h5>
+          <div *ngFor="let habit of habits">
+              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(7)"></div>
+          </div>
+      </div>
+
+
+</div>

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FutureComponent implements OnInit {
 
+  isPatternOn: boolean;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showPattern(){
+    this.isPatternOn = !this.isPatternOn;
+    console.log(this.isPatternOn)
   }
 
 }
