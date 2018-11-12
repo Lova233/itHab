@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule as AppMaterialModule } from '../app/app-material-module';
+
+
+
+
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -50,7 +56,11 @@ import { HabitsCompleteComponent } from './components/habits-complete/habits-com
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppMaterialModule,
+
 
   ],
   providers: [],
