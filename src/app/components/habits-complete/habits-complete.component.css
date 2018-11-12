@@ -10,6 +10,26 @@
   
 }
 
+.selected-habit-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* width: 100%; */
+  
+}
+
+
+
+
+
+#uncomplete-habit-one{
+  border: solid 1px  #9233A3;
+  width: 70px;
+  height: 70px;
+  transition: all .2s ease-in-out; 
+  margin-right: 20px;
+}
+
 #habit-one{
   width: 70px;
   height: 70px;
@@ -24,36 +44,62 @@
   background-color: #FF0000;
   transition: all .2s ease-in-out; 
   margin-right: 20px;
-
-
 }
+
+#uncomplete-habit-two{
+  border: solid 1px #FF0000;
+  width: 70px;
+  height: 70px;
+  transition: all .2s ease-in-out; 
+  margin-right: 20px;
+}
+
 #habit-three{
   width: 70px;
   height: 70px;
   background-color: #F67400;
   transition: all .2s ease-in-out; 
   margin-right: 20px;
-
-
-
 }
+
+#uncomplete-habit-three{
+  border: solid 1px #F67400;
+  width: 70px;
+  height: 70px;
+  transition: all .2s ease-in-out; 
+  margin-right: 20px;
+}
+
 #habit-four{
   width: 70px;
   height: 70px;
   background-color: #EAFF56;
   transition: all .2s ease-in-out; 
   margin-right: 20px;
-
-
 }
+
+#uncomplete-habit-four{
+  border: solid 1px #EAFF56;
+  width: 70px;
+  height: 70px;
+  transition: all .2s ease-in-out; 
+  margin-right: 20px;
+}
+
 #habit-five{
   width: 70px;
   height: 70px;
   background-color: #00B757;
   transition: all .2s ease-in-out; 
   margin-right: 20px;
+}
 
-
+#uncomplete-habit-five{
+  border: solid 1px #00B757;
+  width: 70px;
+  height: 70px;
+  transition: all .2s ease-in-out; 
+  margin-right: 20px;
 }
 
 .habit-container > .days > div > div:hover { 
@@ -62,6 +108,13 @@
   -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
   box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
 }
+.selected-habit-container > div:hover { 
+  transform: scale(1.1); 
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.21);
+}
+
 
 .close:hover{
   transform: scale(1.1); 
