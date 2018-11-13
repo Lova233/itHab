@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Habits } from '../../models/habit.model';
+import { Habit } from '../../models/habit.model';
 
 
 export const LOAD_HABITS = '[Habit] Load Habit';
@@ -18,11 +18,11 @@ export class LoadHabitsFail implements Action {
 
 export class LoadHabitsSuccess implements Action {
   readonly type = LOAD_HABITS_SUCCESS;
-  constructor(public payload: Habits[]) {}
+  constructor(public payload: Habit[]) {}
 }
 
 
-export type TerrainsAction =
+export type HabitsAction =
 LoadHabits |
 LoadHabitsFail |
 LoadHabitsSuccess 

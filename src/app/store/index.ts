@@ -1,4 +1,5 @@
-export * from '../../app/store/actions/action'
+export * from './actions/action'
+export * from './reducers/reducer'
 
 
 

@@ -1,5 +1,8 @@
-export interface Habits {
+export interface Habit {
 
-  habitName :[{num: '1', frq:[1], complete: boolean}],
-
+  [""] :[{
+    num: string, 
+    frq:Array<number>, 
+    complete: boolean}
+  ],
 }

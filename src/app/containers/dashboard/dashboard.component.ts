@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as fromHabit from '../../store';
-import { Habits } from '../../models/habit.model'
+import { Habit } from '../../models/habit.model'
 
 
 @Component({
@@ -11,7 +11,8 @@ import { Habits } from '../../models/habit.model'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  
+  habit$: Observable<Habit>;
   isFutureOn:boolean
   store: any;
 
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.isFutureOn = true;
-    this.store.dispatch(new fromHabit.LoadHabits());
+    // this.store.dispatch(new fromHabit.LoadHabits());
 
   }
 
