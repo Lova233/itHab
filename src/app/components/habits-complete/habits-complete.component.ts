@@ -28,7 +28,6 @@ export class HabitsCompleteComponent implements OnInit {
 
   showHabit(habit){
     this.habitSelected = habit;
-    console.log(habit)
   }
 
   closeHabit(){
@@ -36,7 +35,6 @@ export class HabitsCompleteComponent implements OnInit {
   }
   completeHabit(){
     this.habitSelected.status = true; 
-    console.log( this.habitSelected, "--TRUE DETECTIVE")
   }
 
 
