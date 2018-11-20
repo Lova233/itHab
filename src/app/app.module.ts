@@ -7,6 +7,9 @@ import { MaterialModule as AppMaterialModule } from '../app/app-material-module'
 
 
 
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/index';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -60,7 +63,10 @@ import { HabitsCompleteComponent } from './components/habits-complete/habits-com
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
-
+    StoreModule.forRoot({ reducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
+    })    
 
   ],
   providers: [],

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as fromStore from '../../store'
+
 
 
 @Component({
@@ -11,6 +13,7 @@ export class PresentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
    
   }
   
