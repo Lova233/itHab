@@ -4,18 +4,18 @@
         logo
     </div>
     <div>
-      <button mat-button>Past</button>
+      <button mat-button routerLink="/past" routerLinkActive="active">Past</button>
     </div>
     <div>
-      <button [matMenuTriggerFor]="menu" mat-button>Present</button>
-      <mat-menu #menu="matMenu">
+      <button mat-button routerLink="/present" routerLinkActive="active"  >Present</button>
+      <!-- <mat-menu #menu="matMenu">
         <button mat-menu-item>Your Habits</button>
         <button mat-menu-item>Weekly Pattern</button>
-      </mat-menu>
+      </mat-menu> -->
       
     </div>
     <div>
-        <button mat-button>Future</button>
+        <button mat-button routerLink="/future" routerLinkActive="active" >Future</button>
     </div>
   </div>
     <div class="setting">
