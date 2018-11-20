@@ -1,7 +1,6 @@
 
 <div class="component-contatiner-col" *ngIf="!habitSelected">
   <div class="internal-container">
-  <h1>Your habits</h1>
       <div class="habit-container">
         <div *ngFor="let habit of habits" id="habit-{{habit.num}}" (click)="showHabit(habit)"></div>
       </div>
@@ -11,7 +10,7 @@
 <div class="component-contatiner-col" *ngIf="habitSelected">
   <div class="internal-container">
     <fa-icon class="close" (click)="closeHabit()" [icon]="faTimes"></fa-icon>
-  <h1>Tell me about this.</h1>
+  <h1 class="habit-subtitle">Tell me about this.</h1>
     <div class="habit-container">
         <div id="habit-{{habitSelected.num}}"></div>
         <mat-form-field>
