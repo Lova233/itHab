@@ -5,45 +5,45 @@
 
       <div class="days">
         <h5>Mon</h5>
-        <div *ngFor="let habit of habits">
-            <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(1)"></div>
+        <div *ngFor="let habit of monday, let i = index">
+            <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(1)"></div>
         </div>
       </div>
       
       <div class="days">
           <h5>Tue</h5>
-          <div *ngFor="let habit of habits">
-              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(2)"></div>
+          <div *ngFor="let habit of tuesday, let i = index">
+              <div id="habit-{{habit.num}}"  class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(2)"></div>
           </div>
       </div>
       <div class="days">
           <h5>Wed</h5>
-          <div *ngFor="let habit of habits">
-              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(3)"></div>
+          <div *ngFor="let habit of wednesday, let i = index">
+              <div id="habit-{{habit.num}}"  class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(3)"></div>
           </div>
       </div>
       <div class="days">
           <h5>Thu</h5>
-          <div *ngFor="let habit of habits">
-              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(4)"></div>
+          <div *ngFor="let habit of thursday, let i = index">
+              <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(4)"></div>
           </div>
       </div>
       <div class="days">
           <h5>Fri</h5>
-          <div *ngFor="let habit of habits">
-              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(5)"></div>
+          <div *ngFor="let habit of friday, let i = index">
+              <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(5)"></div>
           </div>
       </div>
       <div class="days">
           <h5>Sat</h5>
-          <div *ngFor="let habit of habits">
-              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(6)"></div>
+          <div *ngFor="let habit of saturday, let i = index">
+              <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(6)"></div>
           </div>
       </div>
       <div class="days">
           <h5>Sun</h5>
-          <div *ngFor="let habit of habits">
-              <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(7)"></div>
+          <div *ngFor="let habit of sunday, let i = index">
+              <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" *ngIf="habit.frq.includes(7)"></div>
           </div>
       </div>
 
