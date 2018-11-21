@@ -23,7 +23,8 @@ export class HabitsCompleteComponent implements OnInit {
       { num: "three", frq:[2,3,6,5,7], status:""},
       { num: "four",  frq:[1,2,3,4], status:""},
       { num: "five",  frq:[1,4,6], status:""}
-    ]}
+    ]
+  }
 
 
   showHabit(habit){
