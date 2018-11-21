@@ -2,24 +2,43 @@
 <div class="component-contatiner-col" *ngIf="!habitSelected">
   <div class="internal-container">
       <div class="habit-container">
-        <div *ngFor="let habit of habits" id="habit-{{habit.num}}" (click)="showHabit(habit)"></div>
-      </div>
+        <div *ngFor="let habit of habits; let i = index" id="habit-{{habit.num}}" class="delay{{i}}s" [ngClass]="{'animated 1 fadeIn': isLoading}" (click)="showHabit(habit)"></div>
+      </div> 
     </div>
 </div>
 
 <div class="component-contatiner-col" *ngIf="habitSelected">
   <div class="internal-container">
-    <fa-icon class="close" (click)="closeHabit()" [icon]="faTimes"></fa-icon>
-  <h1 class="habit-subtitle">Tell me about this.</h1>
     <div class="habit-container">
-        <div id="habit-{{habitSelected.num}}"></div>
+        <div id="habit-{{habitSelected.num}}" class="animated 1 fadeIn"></div>
         <mat-form-field>
-          <input matInput placeholder="Description">
+          <input matInput placeholder="Description" [(ngModel)]="habitSelected.name" >
         </mat-form-field>      
         <mat-form-field>
           <input matInput placeholder="Frequency">
         </mat-form-field>
+        <!-- <fa-icon (click)="closeHabit()" [icon]="faTimes"></fa-icon> -->
     </div>
+    <div class="action" style="display:flex">
+    <div class="portfolio-experiment">
+      <a (click)="closeHabit()">
+        <span class="text">confirm</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
+    </div>
+    <div class="portfolio-experiment">
+      <a (click)="closeHabit()">
+        <span class="text">back</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
+    </div>
+   </div>
   </div>
 </div>
 
