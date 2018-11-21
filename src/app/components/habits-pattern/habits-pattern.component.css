@@ -109,3 +109,20 @@ h5{
   display: flex;
   flex-direction: column;
 }
+
+
+.animated.delay0s{
+  animation-delay: 0ms!important;
+}
+.animated.delay1s{
+  animation-delay: 250ms!important;
+}
+.animated.delay2s{
+  animation-delay: 500ms!important;
+}
+.animated.delay3s{
+  animation-delay: 750ms!important;
+}
+.animated.delay4s{
+  animation-delay: 1000ms!important;
+}
