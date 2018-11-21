@@ -7,9 +7,12 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-habits',
   templateUrl: './habits.component.html',
-  styleUrls: ['./habits.component.css']
+  styleUrls: ['./habits.component.css'],
+  
+  
 })
 export class HabitsComponent implements OnInit {
+  
 
   habits:any;
   habitSelected:any;
@@ -27,6 +30,8 @@ export class HabitsComponent implements OnInit {
       { num: "five"}
     ]
   }
+
+  
 
 
   showHabit(habit){

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,7 +8,6 @@ import { MaterialModule as AppMaterialModule } from '../app/app-material-module'
 
 
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './store/index';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
@@ -47,7 +46,7 @@ import { HabitsCompleteComponent } from './components/habits-complete/habits-com
     NavbarComponent,
     HabitsComponent,
     HabitsPatternComponent,
-    HabitsCompleteComponent
+    HabitsCompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,12 +62,7 @@ import { HabitsCompleteComponent } from './components/habits-complete/habits-com
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
-    StoreModule.forRoot({ reducer }),
-    StoreDevtoolsModule.instrument({
-      maxAge: 10
-    })    
-
-  ],
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

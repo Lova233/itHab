@@ -9,6 +9,9 @@ export class FutureComponent implements OnInit {
 
   isPatternOn: boolean;
 
+
+
+ 
   constructor() { }
 
   ngOnInit() {
@@ -18,5 +21,8 @@ export class FutureComponent implements OnInit {
     this.isPatternOn = !this.isPatternOn;
     console.log(this.isPatternOn)
   }
+
+
+
 
 }
