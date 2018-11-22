@@ -27,6 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HabitsComponent } from './components/habits/habits.component';
 import { HabitsPatternComponent } from './components/habits-pattern/habits-pattern.component';
 import { HabitsCompleteComponent } from './components/habits-complete/habits-complete.component';
+import { HabitRecordsComponent } from './habit-records/habit-records.component';
 
 
 
@@ -44,6 +45,7 @@ import { HabitsCompleteComponent } from './components/habits-complete/habits-com
     HabitsComponent,
     HabitsPatternComponent,
     HabitsCompleteComponent,
+    HabitRecordsComponent,
   ],
   imports: [
     BrowserModule,
