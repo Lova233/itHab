@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,9 +7,9 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./habits-complete.component.css']
 })
 export class HabitsCompleteComponent implements OnInit {
-
-
+ @Input()
   habits:any;
+
   habit:any
   habitSelected:any;
   faTimes = faTimes;
@@ -17,13 +17,7 @@ export class HabitsCompleteComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.habits = [
-      { num: "one",   frq:[1,2,3,7], status:""}, 
-      { num: "two",   frq:[5,6,7], status:""},
-      { num: "three", frq:[2,3,6,5,7], status:""},
-      { num: "four",  frq:[1,2,3,4], status:""},
-      { num: "five",  frq:[1,4,6], status:""}
-    ]
+
   }
 
 

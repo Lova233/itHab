@@ -110,6 +110,10 @@ h5{
   flex-direction: column;
 }
 
+.days > app-habit{
+  margin-bottom: 10px;
+}
+
 
 .animated.delay0s{
   animation-delay: 0ms!important;

@@ -28,8 +28,9 @@ import { HabitsComponent } from './components/habits/habits.component';
 import { HabitsPatternComponent } from './components/habits-pattern/habits-pattern.component';
 import { HabitsCompleteComponent } from './components/habits-complete/habits-complete.component';
 import { HabitRecordsComponent } from './habit-records/habit-records.component';
-
-
+import { HabitService } from '../app/services/habit.service'
+import { HttpClientModule } from '@angular/common/http';
+import { HabitComponent } from './components/habit/habit.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { HabitRecordsComponent } from './habit-records/habit-records.component';
     HabitsPatternComponent,
     HabitsCompleteComponent,
     HabitRecordsComponent,
+    HabitComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,8 +63,9 @@ import { HabitRecordsComponent } from './habit-records/habit-records.component';
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
+    HttpClientModule
    ],
-  providers: [],
+  providers: [HabitService,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

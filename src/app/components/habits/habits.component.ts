@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 
@@ -13,8 +13,11 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 })
 export class HabitsComponent implements OnInit {
   
-
+  @Input()
   habits:any;
+  @Output()
+    createHabit : EventEmitter<any> = new EventEmitter();
+    
   habitSelected:any;
   isLoading:boolean;
   parsedFqr:Array<any>;
@@ -25,13 +28,8 @@ export class HabitsComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading=true;
-    this.habits = [
-      { num: "1" , name:"Gym Attendance", frq:[1,2,5]},
-      { num: "2" , name:"No Sugar", frq:[2,4,6,7]},
-      { num: "3",  name:"No Smoking", frq:[2,4,5,7]},
-      { num: "4",  name:"Walk 5km", frq:[1,2,5,6]},
-      { num: "5",  name:"Cook at home", frq:[1,2,3]}
-    ]
+    console.log("habits",this.habits)
+
   }
 
 
@@ -40,7 +38,7 @@ export class HabitsComponent implements OnInit {
     this.isLoading=false;    
 
 
-    let parsedDay = this.habitSelected.frq.map(x => this.parseDay(x));
+    let parsedDay = this.habitSelected.Frequency.values.sort((a,b)=>a-b).map(x => this.parseDay(x));
     console.log(parsedDay,"moltiplicati");
     this.e = parsedDay.toString();
     console.log(this.e,"to String");
@@ -50,7 +48,10 @@ export class HabitsComponent implements OnInit {
   closeHabit(){
     this.habitSelected = undefined;
   }
-
+  newHabit(){
+    this.createHabit.emit(this.habitSelected);
+    this.closeHabit()
+  }
   parseDay(x:number){
     switch (x){
       case 1:
