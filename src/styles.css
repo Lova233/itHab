@@ -7,6 +7,10 @@
 }
 
 
+body{
+  margin: 0;
+}
+
 /*GLOBAL CONTAINER AND ALIGNER */
 
 
@@ -39,6 +43,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: row;
   /* background-image: url('./assets/trianglify.svg'); */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -46,9 +51,15 @@
   background-size: cover;
   
 }
+
 app-future{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.app{
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* FONTS */
@@ -62,4 +73,11 @@ app-future{
 
 .habit-subtitle{
   font-weight: lighter;
+}
+
+
+/* COMPONENTS */
+
+app-future{
+width: 100%;
 }
