@@ -17,7 +17,10 @@ export class HabitService {
     console.log(payload)
     return this.http
       .get<any>(this.url+"/tasks/"+payload)
-      .pipe(catchError((error: any) => Observable.throw(error.json())));
+      .pipe(catchError((error: any) => {
+        console.log(error)
+        return error;
+      }));
   }
  
   addTask(payload: any): Observable<any> {
@@ -39,6 +42,19 @@ export class HabitService {
    
     return this.http
       .post<any>(this.url+"/activation", JSON.stringify(payload),{headers:headers})
+      .pipe(catchError((error: any) =>{ 
+        console.log(error)
+        return error;
+      }
+      ));
+  }
+
+  completed(payload: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json');
+    console.log(payload);
+    return this.http
+      .post<any>(this.url+"/completed", JSON.stringify(payload),{headers:headers})
       .pipe(catchError((error: any) =>{ 
         console.log(error)
         return error;
