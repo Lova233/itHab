@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'app-habits-pattern',
@@ -7,16 +9,21 @@ import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 })
 export class HabitsPatternComponent implements OnInit {
     @Input()
-    habits:any;
-  
-
     monday:Array<any>;
+    @Input()
     tuesday:Array<any>;
+    @Input()
     wednesday:Array<any>;
+    @Input()
     thursday:Array<any>;
+    @Input()
     friday:Array<any>;
+    @Input()
     saturday:Array<any>;
+    @Input()
     sunday:Array<any>;
+
+   
     
   constructor() { 
     
@@ -25,14 +32,9 @@ export class HabitsPatternComponent implements OnInit {
   ngOnInit() {
 
     //  filte monday = habits when Frequency.values = 1
-    this.monday = this.habits.filter(habit =>  habit.Frequency.values.includes(1));
-    this.tuesday = this.habits.filter(habit =>  habit.Frequency.values.includes(2));
-    this.wednesday = this.habits.filter(habit =>  habit.Frequency.values.includes(3));
-    this.thursday = this.habits.filter(habit =>  habit.Frequency.values.includes(4));
-    this.friday = this.habits.filter(habit =>  habit.Frequency.values.includes(5));
-    this.saturday = this.habits.filter(habit =>  habit.Frequency.values.includes(6));
-    this.sunday = this.habits.filter(habit =>  habit.Frequency.values.includes(7));
-    console.log(this.habits);
+    
+
+    // console.log(this.habit);
 
     
     console.log(this.monday, "dave è bravo con il filter")  
