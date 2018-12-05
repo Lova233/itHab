@@ -1,1 +1,1 @@
-<app-habits-complete></app-habits-complete>
+<app-habits-complete *ngIf="isLoaded" [habits]="habits" (completedHabit)="completeHabit($event)"></app-habits-complete>
