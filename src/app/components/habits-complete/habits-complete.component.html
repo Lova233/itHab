@@ -1,27 +1,29 @@
-<div class="component-contatiner-col" *ngIf="!habitSelected" >
+<div class="component-contatiner-col" >
     <div class="internal-container">
-    <h1>Your todays habits</h1>
-    <h5>Mon</h5>
+    <h1>{{parsedToday}}</h1>
         <div class="habit-container">
-            <div class="days">
-                <div *ngFor="let habit of habits">
-                    <div id="habit-{{habit.num}}" *ngIf="habit.frq.includes(1)" (click)="showHabit(habit)"></div> 
-                </div>  
-            </div>
-        </div>
-</div> 
+          <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of todaysHabit, let i = index" [habit]="habit" (click)="showHabit(habit)"></app-habit> 
+        </div> 
+    </div>
 </div>
 <div class="component-contatiner-col" *ngIf="habitSelected">
-  <div class="internal-container">
+  <!-- <div class="internal-container">
     <fa-icon class="close" (click)="closeHabit()" [icon]="faTimes"></fa-icon>
   <h1>Have you complete this</h1>
     <div class="selected-habit-container">
         <div id="habit-{{habitSelected.num}}" (click)="completeHabit()"></div>
         <div id="uncomplete-habit-{{habitSelected.num}}" (click)="ucompleteHabit()"></div>
     </div>
-  </div>
-  
-</div>
-      
+  </div> 
 
+  MANDARE -- ID  COMPLETED
+-->
+  <div class="internal-container">
+      <h1 class="habit-subtitle">Have you complete {{habitSelected.Description}}</h1>
+        <div class="habit-container">
+            <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" (click)="completeHabit()" >yes</div>
+            <div id="habit" [ngStyle]="{'border-color':   habitSelected.Color}" (click)="uncompleteHabit()">nope</div>
+        </div>
+</div>
+    
  
