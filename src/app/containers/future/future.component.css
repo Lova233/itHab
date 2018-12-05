@@ -9,5 +9,32 @@
 }
 
 .habit{
-  margin-top:60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.habit-pattern{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard{
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+  background:white;
+  -webkit-box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+  -moz-box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+  box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+}
+
+.main-content{
+  width: 70%;
+  height: 100%;
+}
+  
+app-dashboard{
+  width: 100%;
 }
