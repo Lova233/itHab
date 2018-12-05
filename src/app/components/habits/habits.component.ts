@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output,  } from '@angular/core';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
+import { FormControl } from '@angular/forms';
+import { last } from 'rxjs/operators';
 
 
 
@@ -16,8 +18,22 @@ export class HabitsComponent implements OnInit {
   @Input()
   habits:any;
   @Output()
-    createHabit : EventEmitter<any> = new EventEmitter();
+  createHabit : EventEmitter<any> = new EventEmitter();
     
+  habitControl = new FormControl();
+  frequencies: object[] = [  
+    {value: 1 , label:'Monday'},
+    {value: 2,  label:'Tuesday'},
+    {value: 3,  label:'Wednesday'},
+    {value: 4,  label:'Thursday'},
+    {value: 5,  label:'Friday'},
+    {value: 6,  label:'Saturday'},
+    {value: 7,  label:'Sunday'} 
+  ];
+
+
+
+  frequency:any;
   habitSelected:any;
   isLoading:boolean;
   parsedFqr:Array<any>;
@@ -26,32 +42,35 @@ export class HabitsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {     
+    console.log(this.habits,"nel complete")
+
     this.isLoading=true;
-    console.log("habits",this.habits)
-
+    console.log(this.habits,"QUELLE CARICATE nel componente")
+    this.habits = this.habits.sort((a,b)=> a.Color-b.Color);
+    console.log(this.habits,"quelle sortate")
   }
-
 
   showHabit(habit){
     this.habitSelected = habit;
     this.isLoading=false;    
-
-
     let parsedDay = this.habitSelected.Frequency.values.sort((a,b)=>a-b).map(x => this.parseDay(x));
-    console.log(parsedDay,"moltiplicati");
     this.e = parsedDay.toString();
-    console.log(this.e,"to String");
 
   }
 
   closeHabit(){
     this.habitSelected = undefined;
+    // console.log(this.frequency.map(a => a.value))
   }
   newHabit(){
     this.createHabit.emit(this.habitSelected);
     this.closeHabit()
+
+
   }
+
+  
   parseDay(x:number){
     switch (x){
       case 1:

@@ -1,5 +1,5 @@
 
-<div class="component-contatiner-col" *ngIf="!habitSelected">
+<div class="component-contatiner-col">
   <div class="internal-container">
       <div class="habit-container">
         <app-habit  *ngFor="let habit of habits; let i = index" [habit]="habit" id="habit-{{habit.Color}}" class="delay{{i}}s" [ngClass]="{'animated 1 fadeIn': isLoading}" (click)="showHabit(habit)"></app-habit>
@@ -10,12 +10,17 @@
 <div class="component-contatiner-col" *ngIf="habitSelected">
   <div class="internal-container">
     <div class="habit-container">
-        <div id="habit-{{habitSelected.Color}}" class="animated 1 fadeIn"></div>
+        <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" class="animated 1 fadeIn"></div>
         <mat-form-field>
           <input matInput placeholder="Description" [(ngModel)]="habitSelected.Description" >
         </mat-form-field>      
-        <mat-form-field>
+        <!-- <mat-form-field>
           <input matInput placeholder="Frequency" [(ngModel)]="habitSelected.Frequency.values">
+        </mat-form-field> -->
+        <mat-form-field>
+          <mat-select placeholder="Frequency" [(ngModel)]="habitSelected.Frequency.values" multiple>
+            <mat-option *ngFor="let frequency of frequencies" [value]="frequency.value" >{{frequency.label}}</mat-option>
+          </mat-select>
         </mat-form-field>
         <!-- <fa-icon (click)="closeHabit()" [icon]="faTimes"></fa-icon> -->
     </div>
