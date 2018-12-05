@@ -27,10 +27,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HabitsComponent } from './components/habits/habits.component';
 import { HabitsPatternComponent } from './components/habits-pattern/habits-pattern.component';
 import { HabitsCompleteComponent } from './components/habits-complete/habits-complete.component';
-import { HabitRecordsComponent } from './habit-records/habit-records.component';
+import { HabitRecordsComponent } from './components/habit-records/habit-records.component';
 import { HabitService } from '../app/services/habit.service'
 import { HttpClientModule } from '@angular/common/http';
 import { HabitComponent } from './components/habit/habit.component';
+
+
+import { ParseDayPipe } from './pipes/days.pipe';
+
 
 
 @NgModule({
@@ -48,6 +52,7 @@ import { HabitComponent } from './components/habit/habit.component';
     HabitsCompleteComponent,
     HabitRecordsComponent,
     HabitComponent,
+    ParseDayPipe
   ],
   imports: [
     BrowserModule,
