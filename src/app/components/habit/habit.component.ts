@@ -13,7 +13,6 @@ export class HabitComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.habit,"dave è bravissimo");
   }
 
 }
