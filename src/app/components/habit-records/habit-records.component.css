@@ -1,0 +1,12 @@
+.records-container{
+display: flex;
+flex-direction: column;
+}
+
+.records-calendar{
+  display: flex;
+}
+
+app-habit{
+  margin:10px;
+}

@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, } from '@angular/core';
 
 @Component({
   selector: 'app-habit-records',
   templateUrl: './habit-records.component.html',
   styleUrls: ['./habit-records.component.css']
 })
-export class HabitRecordsComponent implements OnInit {
+export class HabitRecordsComponent{
+  @Input()
+  habitsComplete:any;
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewChecked(): void {
+    console.log(this.habitsComplete, "nel componente")
   }
-
 }

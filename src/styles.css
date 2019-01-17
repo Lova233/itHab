@@ -13,8 +13,26 @@ body{
 
 /*GLOBAL CONTAINER AND ALIGNER */
 
+.main-content{
 
-  .component-contatiner-row{
+  width: 70%;
+  height: 100%;
+}
+
+app-dashboard{
+  width: 100%;
+}
+.dashboard{
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+  background:white;
+  -webkit-box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+  -moz-box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+  box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+}
+
+.component-contatiner-row{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,10 +70,6 @@ body{
   
 }
 
-app-future{
-  display: flex;
-  flex-direction: row;
-}
 
 .app{
   display: flex;
@@ -69,15 +83,42 @@ app-future{
     text-align: center;
     font-weight: normal;
     text-underline-position: below;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .habit-subtitle{
   font-weight: lighter;
 }
 
+.main-section-title{
+  width: 90%;
+  margin: 0 auto;
+}
 
 /* COMPONENTS */
 
 app-future{
 width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+app-present{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.main-section-actionbar{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-s; */
+  flex-direction: row;
+  height: 80px;
+  -webkit-box-shadow: 0px 10px 5px -8px rgba(194,194,194,0.38);
+  -moz-box-shadow: 0px 10px 5px -8px rgba(194,194,194,0.38);
+  box-shadow: 0px 10px 5px -8px rgba(194,194,194,0.38);
 }

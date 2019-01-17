@@ -43,12 +43,8 @@ export class HabitsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {     
-    console.log(this.habits,"nel complete")
-
     this.isLoading=true;
-    console.log(this.habits,"QUELLE CARICATE nel componente")
     this.habits = this.habits.sort((a,b)=> a.Color-b.Color);
-    console.log(this.habits,"quelle sortate")
   }
 
   showHabit(habit){

@@ -1,5 +1,6 @@
 <div class="dashboard-actionbar">
-    <h1 class="dashboard-title">Dashboard</h1>
+    <h1 class="dashboard-title"><img class="dashboard-icon" src="../../../assets/metrics-colored-48.svg">Dashboard</h1>
+    <h2 class="dashboard-date">{{today}}</h2>
 </div>
 <div class="dashboard-container">
     <div class="habit-container" *ngFor="let habit of habits; let i = index">
@@ -7,6 +8,7 @@
       </app-habit> 
     <div class="habit-field">
       <h3 class="habit-description">{{habit.Description}}</h3>
+      <hr>
       <h4 class="habit-frequency">{{habit.Frequency.values | parseDay }}</h4>
     </div> 
   </div>

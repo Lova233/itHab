@@ -1,3 +1,5 @@
-<p>
-  habit-records works!
-</p>
+<div class="records-calendar">
+<div class="records-container" *ngFor="let habitComplete of habitsComplete">
+    <app-habit [habit]="habitComplete" *ngFor="let habit of habitComplete.completed">{{habit.Color}}</app-habit>
+</div>
+</div>

@@ -1,15 +1,18 @@
 <div class="dashboard"  *ngIf="!isLoading">  
   <app-dashboard [habits]="habits"></app-dashboard>
 </div>
-<div class="main-content">
-  <div *ngIf="!isLoading">
+<div class="main-content" *ngIf="!isLoading">
+    <div class="main-section-actionbar">
+      <h1 class="main-section-title">Future</h1>
+    </div>
+    <div class="sub-content">
       <div class="habit">
-        <h1 class="main-title animated 1 fadeInDown">Set your habits pattern</h1>
+        <h1 class="main-title animated 1 fadeInDown"><img class="title-icon" src="../../../assets/add-notification-colored-48.svg">Habits</h1>
         <app-habits (createHabit)="createHabit($event)" [habits]="habits" ></app-habits>
       </div>
       <div class="habit-pattern">
-        <h1 class="main-title animated 1 fadeInDown">Your habits Pattern</h1>
+        <h1 class="main-title animated 1 fadeInDown"><img class="title-icon" src="../../../assets/grid-colored-48.svg">Habits Pattern</h1>
         <app-habits-pattern [monday]="monday" [tuesday]="tuesday" [wednesday]="wednesday" [thursday]="thursday" [friday]="friday" [saturday]="saturday" [sunday]="sunday"></app-habits-pattern>
       </div> 
-  </div>
+    </div>
 </div>

@@ -14,7 +14,6 @@ export class HabitService {
   endPoints:any;
  
   getUserHabits(payload:string): Observable<any> {
-    console.log(payload)
     return this.http
       .get<any>(this.url+"/tasks/"+payload)
       .pipe(catchError((error: any) => {
@@ -22,6 +21,21 @@ export class HabitService {
         return error;
       }));
   }
+
+  getTasksCompleted(payload:string): Observable<any> {
+    return this.http
+      .get<any>(this.url+"/tasks/"+payload+"/completed")
+      .pipe(catchError((error: any) => {
+        console.log(error)
+        return error;
+      }));
+  }
+
+  // getUserCompletedHabits(payload:string): Observable<any>{
+  //   console.log(payload)
+  //   return this.http
+  //       .get<any>(thhis.url)
+  // }
  
   addTask(payload: any): Observable<any> {
     let headers = new HttpHeaders();
@@ -59,8 +73,10 @@ export class HabitService {
         console.log(error)
         return error;
       }
-      ));
+      )); 
   }
+
+  
  
   // applyJob(payload: any): Observable<Job> {
   //   const user = this.authService.getAuthenticatedUser().getUsername();

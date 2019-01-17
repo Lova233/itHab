@@ -29,22 +29,7 @@ export class FutureComponent implements OnInit {
     this.todayDate.toDateString()
     console.log(this.todayDate)
     this.isLoading= true;
-    this.habitService.getUserHabits("AndreaLovati").subscribe(
-      habits=> {
-        this.habits=habits.filter(habit=>habit.IsActive)
-        this.habits = this.habits.sort((a,b)=> b.Color.replace("#", "0x")-a.Color.replace("#", "0x"));
-
-        this.monday = this.habits.filter(habit =>  habit.Frequency.values.includes(1));
-        this.tuesday = this.habits.filter(habit =>  habit.Frequency.values.includes(2));
-        this.wednesday = this.habits.filter(habit =>  habit.Frequency.values.includes(3));
-        this.thursday = this.habits.filter(habit =>  habit.Frequency.values.includes(4));
-        this.friday = this.habits.filter(habit =>  habit.Frequency.values.includes(5));
-        this.saturday = this.habits.filter(habit =>  habit.Frequency.values.includes(6));
-        this.sunday = this.habits.filter(habit =>  habit.Frequency.values.includes(7));
-        this.isLoading=false
-        console.log("in future",this.habits)
-      }
-   )
+    this.getTaks();  
 
    
   }
@@ -81,8 +66,13 @@ export class FutureComponent implements OnInit {
       isActivated : false
     }
 
-    this.habitService.addTask(newHabit).subscribe(res=>console.log(res));
-    this.habitService.activation(habitToReplace).subscribe(res=>console.log(res));
+    this.habitService.addTask(newHabit).subscribe(res=>{
+      this.habitService.activation(habitToReplace).subscribe(res=>{
+        this.getTaks();
+      });
+
+    });
+    
     this.habits = this.habits.sort((a,b)=> b.Color.replace("#", "0x")-a.Color.replace("#", "0x"));
     this.monday = this.habits.filter(habit =>  habit.Frequency.values.includes(1));
     this.tuesday = this.habits.filter(habit =>  habit.Frequency.values.includes(2));
@@ -91,7 +81,24 @@ export class FutureComponent implements OnInit {
     this.friday = this.habits.filter(habit =>  habit.Frequency.values.includes(5));
     this.saturday = this.habits.filter(habit =>  habit.Frequency.values.includes(6));
     this.sunday = this.habits.filter(habit =>  habit.Frequency.values.includes(7));
-    
+  }
+
+  getTaks(){
+    this.habitService.getUserHabits("AndreaLovati").subscribe(
+      habits=> {
+        this.habits=habits.filter(habit=>habit.IsActive)
+        this.habits = this.habits.sort((a,b)=> b.Color.replace("#", "0x")-a.Color.replace("#", "0x"));
+
+        this.monday = this.habits.filter(habit =>  habit.Frequency.values.includes(1));
+        this.tuesday = this.habits.filter(habit =>  habit.Frequency.values.includes(2));
+        this.wednesday = this.habits.filter(habit =>  habit.Frequency.values.includes(3));
+        this.thursday = this.habits.filter(habit =>  habit.Frequency.values.includes(4));
+        this.friday = this.habits.filter(habit =>  habit.Frequency.values.includes(5));
+        this.saturday = this.habits.filter(habit =>  habit.Frequency.values.includes(6));
+        this.sunday = this.habits.filter(habit =>  habit.Frequency.values.includes(7));
+        this.isLoading = false;
+      }
+   )
   }
 
 

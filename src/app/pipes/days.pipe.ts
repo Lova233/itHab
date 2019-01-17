@@ -8,9 +8,7 @@ export class ParseDayPipe {
   days: any[];
   transform(day: Array<number>): string {
 
-    return day.sort((a,b)=>a-b).map(x => this.parseDay(x)).toString();
-    
-     
+    return day.sort((a,b)=>a-b).map(x => this.parseDay(x)).toString().replace(/,/g, ', ');
     }
 
 
