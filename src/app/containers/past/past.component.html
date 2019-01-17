@@ -1,7 +1,8 @@
-<!-- <button (click)="getAllCompleted()">Get All</button>
+<button (click)="getAllCompleted()">Get All</button>
 <div style="display:flex;width: 80%;flex-wrap: wrap">
 <button *ngFor="let habit of habits" (click)="getCompleted(habit)">{{habit.Description}}</button> -->
-<!-- <div style=" border:1px solid" *ngFor="let i = index , let habitComplete of habitsComplete">{{habitComplete.Completed_at}}</div>
-</div> -->
+<div style=" border:1px solid" *ngFor="let i = index , let habitComplete of habitsComplete">{{habitComplete.Completed_at}}</div>
+</div> 
 
-<app-habit-records [habitsComplete]="habitsComplete"></app-habit-records>
+ <app-habit-records [habitsComplete]="habitsComplete"></app-habit-records>
+<app-admin-panel></app-admin-panel>

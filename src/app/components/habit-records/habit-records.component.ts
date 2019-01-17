@@ -13,5 +13,7 @@ export class HabitRecordsComponent{
 
   ngAfterViewChecked(): void {
     console.log(this.habitsComplete, "nel componente")
+  //  let habitSorted =  this.habitsComplete.Frequency.values.sort((a,b)=>a-b)
+  //  console.log(habitSorted,)
   }
 }

@@ -34,6 +34,7 @@ import { HabitComponent } from './components/habit/habit.component';
 
 
 import { ParseDayPipe } from './pipes/days.pipe';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 
 
@@ -52,7 +53,8 @@ import { ParseDayPipe } from './pipes/days.pipe';
     HabitsCompleteComponent,
     HabitRecordsComponent,
     HabitComponent,
-    ParseDayPipe
+    ParseDayPipe,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
