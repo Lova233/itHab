@@ -27,7 +27,6 @@ export class FutureComponent implements OnInit {
 
   ngOnInit() {
     this.todayDate.toDateString()
-    console.log(this.todayDate)
     this.isLoading= true;
     this.getTaks();  
 
