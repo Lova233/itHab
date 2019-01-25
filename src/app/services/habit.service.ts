@@ -66,7 +66,7 @@ export class HabitService {
   completed(payload: any): Observable<any> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    console.log(payload);
+    console.log(payload,"payloadnelservice");
     return this.http
       .post<any>(this.url+"/completed", JSON.stringify(payload),{headers:headers})
       .pipe(catchError((error: any) =>{ 
@@ -74,6 +74,9 @@ export class HabitService {
         return error;
       }
       )); 
+  }
+
+    
   }
 
   
@@ -92,4 +95,3 @@ export class HabitService {
   // }
  
  
-}

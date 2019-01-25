@@ -54,7 +54,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
     HabitRecordsComponent,
     HabitComponent,
     ParseDayPipe,
-    AdminPanelComponent
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,

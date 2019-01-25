@@ -31,8 +31,9 @@ ngOnInit() {
 }
 
 completeHabit(habitComplete){
-  let payload = {...habitComplete,username:"AndreaLovati",completed_at:null}
-  console.log(payload);
+  console.log(habitComplete,"quella che completa")
+  let payload = {...habitComplete,username:"AndreaLovati",completed_at:null,color:habitComplete.color,description:habitComplete.description}
+  console.log(payload,"pay");
   this.habitService.completed(payload).subscribe(res=>console.log(res));
 }
 

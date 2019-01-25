@@ -37,7 +37,9 @@ export class HabitsCompleteComponent implements OnInit {
   
     let habitCompl= {
       task_id: this.habitSelected.Task_id,
-      completed: true
+      completed: true,
+      color: this.habitSelected.Color,
+      description: this.habitSelected.Description,
     }
     this.completedHabit.emit(habitCompl);
   }
@@ -45,7 +47,9 @@ export class HabitsCompleteComponent implements OnInit {
   uncompleteHabit(){
     let habitCompl= {
       task_id: this.habitSelected.Task_id,
-      completed: false
+      completed: false,
+      color: this.habitSelected.Color,
+      description: this.habitSelected.description,
     }
     this.completedHabit.emit(habitCompl);
   }

@@ -10,10 +10,11 @@ export class HabitComponent implements OnInit {
 
   @Input()
   habit;
-
+  
   constructor() { }
 
   ngOnInit() {
+    console.log(this.habit,"coooo")
   }
 
 }
