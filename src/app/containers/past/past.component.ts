@@ -23,32 +23,28 @@ export class PastComponent implements OnInit {
         this.habitService.getTasksCompleted("AndreaLovati").subscribe(
           habits=>{
             this.habitsComplete=habits;
-            // this.getAllCompleted();
-            // this.habitsComplete.map(habit=>{
-            // console.log(habit.completed)
-            // habit.color;  
-            // habit.completed.sort((a,b)=> a.Completed_at - b.Completed_at);
-            // habit.completed.map(t=>t.Completed_at = new Date(t.Completed_at * 1000).toDateString());
-            // this.allComplete = of(this.transfromTaskCompleted(this.habitsComplete));
+            this.getAllCompleted();
+            this.habitsComplete.map(habit=>{
+            console.log(habit.completed)
+            habit.color;  
+            habit.completed.sort((a,b)=> a.Completed_at - b.Completed_at);
+            habit.completed.map(t=>t.Completed_at = new Date(t.Completed_at * 1000).toDateString());
             console.log(this.habitsComplete,"observable")
             })
-            
-            console.log(this.habitsComplete, "quello raw");
-            
           })
-      }
+        })}
 
 
-  // getCompleted(e){
-  //   let completed = this.habitsComplete.filter(habit=> habit.Task_id=== e.Task_id);
-  //   // console.log({...e,completed})
-  //   return {...e,completed}
+  getCompleted(e){
+    let completed = this.habitsComplete.filter(habit=> habit.Task_id=== e.Task_id);
+    // console.log({...e,completed})
+    return {...e,completed}
     
-  // }
+  }
 
-  // getAllCompleted(){
-  //  this.habitsComplete = this.habits.map(h=>this.getCompleted(h))
-  // }
+  getAllCompleted(){
+   this.habitsComplete = this.habits.map(h=>this.getCompleted(h))
+  }
 
   // transfromTaskCompleted(habitsComplete){
   //   const reduce = (tasks)=>{
