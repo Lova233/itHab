@@ -1,20 +1,14 @@
-<!-- <div class="records-calendar">
-<div class="records-container" *ngFor="let weekHabit of weekHabits">
-    <app-habit [habit]="weekHabits" *ngFor="let i = index, let weekHabit of weekHabits.activities.completed_at" [ngClass]="{'completed': habit.completed}" >
-    </app-habit>
-</div>
-</div> -->
-<div class="records-calendar">
-    <div class="records-container" *ngFor="let task of formattedHabits">
-      {{task}}
-        
-    </div>
-
-</div>
-
-
-
-
-
-
-
+<table style="width:100%">
+  <tr>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  <tr *ngFor="let habit of fakedata">  
+    <td *ngFor="let habit of habit.completed">{{habit.Completed_at}}</td>
+  </tr>
+</table>
