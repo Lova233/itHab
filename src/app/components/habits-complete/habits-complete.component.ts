@@ -27,6 +27,7 @@ export class HabitsCompleteComponent implements OnInit {
    this.today = new Date().getDay();
    this.parsedToday = this.parseDay(this.today)
    this.todaysHabit = this.habits.filter(a => a.Frequency.values.includes(this.today));
+   console.log(this.today,"today")
   }
   showHabit(habit){
     this.habitSelected = habit;

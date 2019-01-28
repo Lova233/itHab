@@ -1,8 +1,74 @@
 table, th, td {
-  border: 1px solid black;
   border-collapse: collapse;
 }
 th, td {
   padding: 5px;
   text-align: left;    
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+}
+
+.completed{
+
+}
+
+.habit{
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+}
+.calendar{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+.habit-row{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.not-available{
+  background-color: transparent!important;
+}
+.not-completed{
+  border:1px solid;
+  background-color: transparent!important;
+}
+.week{
+  display: flex;
+  flex-direction: row;
+}
+
+.week-container{
+  display: flex;
+    justify-content: space-around;
+}
+.action-bar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.animated.delay0s{
+  animation-delay: 0ms!important;
+}
+.animated.delay1s{
+  animation-delay: 250ms!important;
+}
+.animated.delay2s{
+  animation-delay: 500ms!important;
+}
+.animated.delay3s{
+  animation-delay: 750ms!important;
+}
+.animated.delay4s{
+  animation-delay: 1000ms!important;
+}
+.animated.delay5s{
+  animation-delay: 1250ms!important;
+}
+.animated.delay6s{
+  animation-delay: 1500ms!important;
 }

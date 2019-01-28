@@ -1,5 +1,10 @@
 <!-- <div style="display:flex;width: 80%;flex-wrap: wrap">
 <div style=" border:1px solid" *ngFor="let i = index , let habitComplete of habitsComplete"></div>
 </div>  -->
+<div class="dashboard"  *ngIf="!isLoading">  
+    <app-dashboard [habits]="habits"></app-dashboard>
+</div>
+<div class="main-content" *ngIf="!isLoading">
 <app-habit-records [habitsComplete]="habitsComplete"></app-habit-records>
 <!-- <app-admin-panel></app-admin-panel> -->
+</div>

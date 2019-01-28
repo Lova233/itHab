@@ -1,14 +1,8 @@
-<table style="width:100%">
-  <tr>
-    <th>Monday</th>
-    <th>Tuesday</th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Friday</th>
-    <th>Saturday</th>
-    <th>Sunday</th>
-  </tr>
-  <tr *ngFor="let habit of fakedata">  
-    <td *ngFor="let habit of habit.completed">{{habit.Completed_at}}</td>
-  </tr>
-</table>
+<div class="calendar">
+  <div class="week-container">
+    <div class="week" *ngFor="let days of week">{{days}}</div>
+  </div>
+    <div class="habit-row" *ngFor="let i=index, let habit of fakedata">  
+      <div class="habit animated 1 fadeIn delay{{a}}s" *ngFor="let a=index , let habit of habit.completed" [ngStyle]="{'background': fakedata[i].Color, 'border-color': fakedata[i].Color}" [ngClass]="{'completed': habit.Completed === 'CMP' , 'not-completed': habit.Completed === 'NC','not-available': habit.Completed === 'NA' }" matTooltip={{fakedata[i].Description}}></div>
+    </div>
+  </div>

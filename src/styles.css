@@ -111,6 +111,12 @@ app-present{
   flex-direction: row;
 }
 
+app-past{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
 
 .main-section-actionbar{
   display: flex;
