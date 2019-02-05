@@ -16,11 +16,11 @@ export class AdminPanelComponent implements OnInit {
   constructor(private habitService : HabitService) { }
 
   ngOnInit() {
-   this.start = 1546348017;
-   this.end = 1547730178;
+  //  this.start = 1546348017;
+  //  this.end = 1547730178;
 
    this.start =  moment("2019-01-01");
-   this.end = moment("2019-01-21")
+   this.end = moment("2019-02-05")
    this.habitService.getUserHabits("AndreaLovati").subscribe(
     habits=> {
       this.habits=habits.filter(habit=>habit.IsActive)

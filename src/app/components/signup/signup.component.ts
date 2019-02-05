@@ -78,7 +78,6 @@ export class SignupComponent {
     }
 
     goNext(){
-      console.log(this.step,"--ACTUAL STEP")
       if(this.step == this.mailStep){
         this.step = this.pswStep;}
       else if(this.step == this.recoveryStepOne){
@@ -87,7 +86,6 @@ export class SignupComponent {
     
 
 
-      console.log(this.step,"--MUTATE STEP")
 
 
       this.mailStep.error = '';

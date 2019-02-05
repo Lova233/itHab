@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 })
 export class HabitsPatternComponent implements OnInit {
     @Input()
-    monday:Array<any>;
+    monday:Array<any>;  
     @Input()
     tuesday:Array<any>;
     @Input()
@@ -37,7 +37,6 @@ export class HabitsPatternComponent implements OnInit {
     // console.log(this.habit);
 
     
-    console.log(this.monday, "dave è bravo con il filter")  
   }
   
 

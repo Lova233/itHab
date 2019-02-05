@@ -14,6 +14,7 @@ export class HabitRecordsComponent{
   @Input()
   habitsComplete:any;
   formattedHabits:any;
+
   week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
   fakedata =
     [
@@ -347,7 +348,11 @@ export class HabitRecordsComponent{
   constructor(private cdRef:ChangeDetectorRef) { }
 
   ngAfterViewChecked(): void {
-    console.log(this.fakedata,"arrivano qua")
 
   }
+
+
+
+
+  
 }

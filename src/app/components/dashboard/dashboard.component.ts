@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.today = moment().format("dddd YY MMM"); 
     this.isLoading=true;
-    console.log(this.habits,"dash")
   }
 
 }

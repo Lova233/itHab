@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HabitService } from '../../services/habit.service';
 import { of } from 'rxjs';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-past',
@@ -22,14 +24,14 @@ export class PastComponent implements OnInit {
         this.habits = habits.filter(h=>h.IsActive);
         this.habitService.getTasksCompleted("AndreaLovati").subscribe(
           habits=>{
+            this.allComplete =habits;
             this.habitsComplete=habits;
             this.getAllCompleted();
             this.habitsComplete.map(habit=>{
-            console.log(habit.completed)
             habit.color;  
             habit.completed.sort((a,b)=> a.Completed_at - b.Completed_at);
-            habit.completed.map(t=>t.Completed_at = new Date(t.Completed_at * 1000).toDateString());
-            console.log(this.habitsComplete,"observable")
+            // habit.completed.map(t=>t.Completed_at = moment.unix(t.Completed_at));
+          
             })
           })
         })}
@@ -41,44 +43,60 @@ export class PastComponent implements OnInit {
     return {...e,completed}
     
   }
+  transform(task,allCompleted,date){
+  
+    let tempAll = allCompleted;
+    allCompleted=[];
+    let tempTask = task;
+    tempTask.completed = this.previousWeek(date);
+    tempTask.completed = tempTask.completed.map((t)=>{
+      let status = tempAll.filter(x=> 
+        x.Task_id === tempTask.Task_id && t.isSame(moment.unix(x.Completed_at)));
+        if(status.length>0){
+        return status[0].Completed ? {status:"CMP"} : {status:"NC"}
+      } else{
+        return  {status:"NA"}
+      }
+      
+    })
 
+    return {...tempTask,date};
+  }
   getAllCompleted(){
    this.habitsComplete = this.habits.map(h=>this.getCompleted(h))
   }
 
-  // transfromTaskCompleted(habitsComplete){
-  //   const reduce = (tasks)=>{
-  //     let completed = tasks.reduce(
-  //       (entities: {
-  //           [id: string]: any
-  //       }, task,index) => {
-        
-  //         if(index<2) entities = {[entities.Completed_at]: entities.Completed}
-  //         return {
-  //               ...entities,
-  //               [task.Completed_at]: task.Completed,
-               
-  //           }
-  //       });
-  //       console.log(completed,"completed")
-  //     return completed;
-
-  //   }
-
-
-  //   let tasks = habitsComplete.reduce(
-  //     (entities: {
-  //         [id: string]: any
-  //     }, task,index) => {
-        
-  //       if(index<2) entities = {[entities.Task_id]: reduce(entities.completed)}
-  //       return {
-  //             ...entities,
-  //             [task.Task_id]: reduce(task.completed),
-
-             
-  //         }
-  //     });
-  //     console.log(tasks,"asdasdasdasdasd")
-  //     return tasks;
+  getWeeks(numberOfWeeks:number){
+    let startDate = moment();
+    let weeks=[];
+    for(let i=1;i<=numberOfWeeks;i++){
+      weeks.push(this.previousWeek(startDate))
+      startDate.subtract(i,"weeks");
     }
+    return weeks;
+  }
+
+  previousWeek(date){
+    let startWeek = date;
+    let endWeek = moment(startWeek);
+    let week =[]
+    startWeek.startOf("week").add(1,"day").subtract(1,"week");
+    endWeek.endOf("week").add(1,"day").subtract(1,"week");
+    let a= 0;
+    while(startWeek.isSameOrBefore(endWeek)){
+ 
+      week.push(moment(startWeek));
+      startWeek.add(1,"day");
+      a++;
+    }
+    return week;
+
+  }
+
+  getWeekObject(past,habitComplete,allCompleted){
+    let allComplete = this.allComplete
+    let temp = habitComplete;
+    let tasks = temp.map(x=>this.transform(x,allCompleted,moment().subtract(past,"weeks")))
+    return tasks
+  }
+}

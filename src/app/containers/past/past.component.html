@@ -4,7 +4,23 @@
 <div class="dashboard"  *ngIf="!isLoading">  
     <app-dashboard [habits]="habits"></app-dashboard>
 </div>
-<div class="main-content" *ngIf="!isLoading">
+
+<div class="main-content-past" *ngIf="!isLoading">
+<button (click)="getWeeks(6)">Week</button>
 <app-habit-records [habitsComplete]="habitsComplete"></app-habit-records>
-<!-- <app-admin-panel></app-admin-panel> -->
+<app-admin-panel></app-admin-panel>
 </div>
+
+
+
+<!-- <div class="dashboard"  *ngIf="!isLoading">  
+    <app-dashboard [habits]="habits"></app-dashboard>
+  </div>
+  <div class="main-content" *ngIf="!isLoading">
+      <div class="main-section-actionbar">
+        <h1 class="main-section-title">Past</h1>
+      </div>
+      <div class="sub-content">
+
+      </div>
+   -->

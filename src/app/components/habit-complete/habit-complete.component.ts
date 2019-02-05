@@ -12,7 +12,6 @@ export class HabitCompleteComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.habits,"asdasd")
   }
 
 }
