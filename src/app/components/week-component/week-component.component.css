@@ -13,10 +13,25 @@ th, td {
 
 }
 
-.habit{
-    height: 40px;
-    width: 40px;
+.habit-b{
+    height: 60px;
+    width: 60px;
     margin: 10px;
+    border-radius: 50%;
+}
+
+.habit-m{
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.habit-s{
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  border-radius: 50%;
 }
 .calendar{
   display: flex;
@@ -28,6 +43,7 @@ th, td {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  width: 100%;
 }
 
 .not-available{

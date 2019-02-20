@@ -13,7 +13,8 @@
     <button (click)="suca(52)">One Year</button>
   </div>
   <div class="records-grid">
-    <app-habit-records *ngFor="let week of toShow" [week2]="week"></app-habit-records>
+    <app-week-component [fakedata]="week" *ngFor="let week of toShow"></app-week-component>
+    <!-- <app-habit-records *ngFor="let week of toShow" [week2]="week"></app-habit-records> -->
   </div>
   <!-- <app-admin-panel></app-admin-panel> -->
 </div>
