@@ -1,8 +1,8 @@
 <div class="calendar">
     <div class="week-container">
-      <div class="week" *ngFor="let days of week">{{days}}</div>
+      <!-- <div class="week" *ngFor="let days of week">{{days}}</div> -->
     </div>
-    <div class="habit-row" *ngFor="let i=index, let habit of fakedata">  
-        <div class="habit animated 1 fadeIn delay{{a}}s" *ngFor="let a=index , let habit of habit.completed" [ngStyle]="{'background': fakedata[i].Color, 'border-color': fakedata[i].Color}" [ngClass]="{'completed': habit.Completed === 'CMP' , 'not-completed': habit.Completed === 'NC','not-available': habit.Completed === 'NA' }" matTooltip={{fakedata[i].Description}}></div>
+    <div class="habit-row" *ngFor="let i=index, let habits of fakedata">  
+        <div class="habit animated 1 fadeIn delay{{a}}s" *ngFor="let a=index , let habit of habits.completed" [ngStyle]="{'background': fakedata[i].Color, 'border-color': fakedata[i].Color}" [ngClass]="{'completed': habit.status === 'CMP' , 'not-completed': habit.status === 'NC','not-available': habit.status === 'NA' }" matTooltip={{fakedata[i].Description}}></div>
     </div>
 </div>

@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./week-component.component.css']
 })
 export class WeekComponentComponent implements OnInit {
-  @Input()fakedata;
+  @Input()
+  fakedata:any;
 
   constructor() { }
 

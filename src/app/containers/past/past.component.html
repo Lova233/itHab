@@ -6,9 +6,19 @@
 </div>
 
 <div class="main-content-past" *ngIf="!isLoading">
-<button (click)="getWeeks(6)">Week</button>
-<app-habit-records [habitsComplete]="habitsComplete"></app-habit-records>
-<app-admin-panel></app-admin-panel>
+<div style = "display: flex; justify-content: space-between; position: absolute; bottom:90px">
+<button (click)="suca(1)">One Week</button>
+<button (click)="suca(2)">Two Weeks</button>
+<button (click)="suca(4)">Four Weeks</button>
+<button (click)="suca(8)">Eight Weeks</button>
+<button (click)="suca(12)">Twelve Weeks</button>
+<button (click)="suca(26)">Half Year</button>
+<button (click)="suca(52)">One Year</button>
+</div>
+<app-habit-records
+  *ngFor="let week of toShow"
+ [week2]="week"></app-habit-records>
+<!-- <app-admin-panel></app-admin-panel> -->
 </div>
 
 

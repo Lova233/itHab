@@ -14,6 +14,8 @@ export class HabitRecordsComponent{
   @Input()
   habitsComplete:any;
   formattedHabits:any;
+  @Input()
+  week2:any;
 
   week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
   fakedata =

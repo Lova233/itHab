@@ -19,8 +19,8 @@ export class AdminPanelComponent implements OnInit {
   //  this.start = 1546348017;
   //  this.end = 1547730178;
 
-   this.start =  moment("2019-01-01");
-   this.end = moment("2019-02-05")
+   this.start =  moment("2018-01-01");
+   this.end = moment("2019-04-30")
    this.habitService.getUserHabits("AndreaLovati").subscribe(
     habits=> {
       this.habits=habits.filter(habit=>habit.IsActive)
