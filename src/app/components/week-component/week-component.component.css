@@ -33,6 +33,13 @@ th, td {
   margin: 10px;
   border-radius: 50%;
 }
+
+.habit-ss{
+  height: 15px;
+  width: 15px;
+  margin: 10px;
+  border-radius: 50%;
+}
 .calendar{
   display: flex;
   flex-direction: column;
@@ -43,7 +50,6 @@ th, td {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  width: 100%;
 }
 
 .not-available{
