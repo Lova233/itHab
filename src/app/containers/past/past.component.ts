@@ -40,7 +40,6 @@ export class PastComponent implements OnInit {
 
   getCompleted(e){
     let completed = this.habitsComplete.filter(habit=> habit.Task_id=== e.Task_id);
-    // console.log({...e,completed})
     return {...e,completed}
 
   }
@@ -98,14 +97,6 @@ export class PastComponent implements OnInit {
     return week;
 
   }
-
-  // getWeekObject(past,habitComplete,allCompleted){
-  //   let allComplete = this.allComplete
-  //   let temp = habitComplete;
-  //   let tasks = temp.map(x=>this.transform(x,allCompleted,moment().subtract(past,"weeks")))
-  //   console.log(tasks,"asd")
-  //   return tasks
-  // }
 
   getWeekObject(numOfWeek){
     let weeks = this.getWeeks(numOfWeek);
