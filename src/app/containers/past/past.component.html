@@ -1,36 +1,19 @@
-<!-- <div style="display:flex;width: 80%;flex-wrap: wrap">
-<div style=" border:1px solid" *ngFor="let i = index , let habitComplete of habitsComplete"></div>
-</div>  -->
-<div class="dashboard"  *ngIf="!isLoading">  
-    <app-dashboard [habits]="habits"></app-dashboard>
+<div class="dashboard" *ngIf="!isLoading">
+  <app-dashboard [habits]="habits"></app-dashboard>
 </div>
 
 <div class="main-content-past" *ngIf="!isLoading">
-<div style = "display: flex; justify-content: space-between; position: absolute; bottom:90px">
-<button (click)="suca(1)">One Week</button>
-<button (click)="suca(2)">Two Weeks</button>
-<button (click)="suca(4)">Four Weeks</button>
-<button (click)="suca(8)">Eight Weeks</button>
-<button (click)="suca(12)">Twelve Weeks</button>
-<button (click)="suca(26)">Half Year</button>
-<button (click)="suca(52)">One Year</button>
-</div>
-<app-habit-records
-  *ngFor="let week of toShow"
- [week2]="week"></app-habit-records>
-<!-- <app-admin-panel></app-admin-panel> -->
-</div>
-
-
-
-<!-- <div class="dashboard"  *ngIf="!isLoading">  
-    <app-dashboard [habits]="habits"></app-dashboard>
+  <div style="display: flex; justify-content: space-between; position: absolute; bottom:90px">
+    <button (click)="suca(1)">One Week</button>
+    <button (click)="suca(2)">Two Weeks</button>
+    <button (click)="suca(4)">Four Weeks</button>
+    <button (click)="suca(8)">Eight Weeks</button>
+    <button (click)="suca(12)">Twelve Weeks</button>
+    <button (click)="suca(26)">Half Year</button>
+    <button (click)="suca(52)">One Year</button>
   </div>
-  <div class="main-content" *ngIf="!isLoading">
-      <div class="main-section-actionbar">
-        <h1 class="main-section-title">Past</h1>
-      </div>
-      <div class="sub-content">
-
-      </div>
-   -->
+  <div class="records-grid">
+    <app-habit-records *ngFor="let week of toShow" [week2]="week"></app-habit-records>
+  </div>
+  <!-- <app-admin-panel></app-admin-panel> -->
+</div>
