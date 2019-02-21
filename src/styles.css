@@ -14,7 +14,7 @@ body{
 /*GLOBAL CONTAINER AND ALIGNER */
 
 .main-content{
-  width: 70%;
+  width: 100%;
   height: 100%;
 }
 
@@ -55,7 +55,7 @@ app-dashboard{
     justify-content: center;
   }
 
-.main-container{
+.main-section-actionbar{
   width: 100%;
   height: 100vh;
   display: flex;
