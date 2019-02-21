@@ -14,15 +14,11 @@
         <mat-form-field>
           <input matInput placeholder="Description" [(ngModel)]="habitSelected.Description" >
         </mat-form-field>      
-        <!-- <mat-form-field>
-          <input matInput placeholder="Frequency" [(ngModel)]="habitSelected.Frequency.values">
-        </mat-form-field> -->
         <mat-form-field>
           <mat-select placeholder="Frequency" [(ngModel)]="habitSelected.Frequency.values" multiple>
             <mat-option *ngFor="let frequency of frequencies" [value]="frequency.value" >{{frequency.label}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <!-- <fa-icon (click)="closeHabit()" [icon]="faTimes"></fa-icon> -->
     </div>
     <div class="action" style="display:flex">
     <div class="portfolio-experiment">
