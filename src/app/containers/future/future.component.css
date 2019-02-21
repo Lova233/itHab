@@ -19,18 +19,35 @@
   flex-direction: column;
   align-items: center;
 }
-
-
-
-
 .sub-content{
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 }
-  
+
+app-habits{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 .title-icon{
   /* padding-right: 20px; */
   width: 100px;
 }
+
+
+@media all and (max-width: 1690px){}
+@media all and (max-width: 1280px){
+  .sub-content{
+    display: block;
+  }
+}
+@media all and (max-width: 1000px){}
+@media all and (max-width: 980px){}
+@media all and (max-width: 720px){}
+@media all and (max-width: 500px){}
+@media all and (max-width: 480px){}
+ 
