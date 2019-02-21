@@ -1,3 +1,6 @@
+@import '../../../variables.scss';
+
+
 .grow { }
 .grow:hover { transform: scale(1.1); }
 
@@ -15,41 +18,6 @@
   border-radius: 50%;
 }
 
-#habit-1{
-  width: 70px;
-  height: 70px;
-  background-color: #9233A3;
-  transition: all .2s ease-in-out; 
-}
-
-#habit-2{
-  width: 70px;
-  height: 70px;
-  background-color: #FF0000;
-  transition: all .2s ease-in-out; 
-
-}
-#habit-3{
-  width: 70px;
-  height: 70px;
-  background-color: #F67400;
-  transition: all .2s ease-in-out; 
-
-}
-#habit-4{
-  width: 70px;
-  height: 70px;
-  background-color: #EAFF56;
-  transition: all .2s ease-in-out; 
-
-}
-#habit-5{
-  width: 70px;
-  height: 70px;
-  background-color: #00B757;
-  transition: all .2s ease-in-out; 
-
-}
 
 .habit-container > div:hover { 
   transform: scale(1.1); 
