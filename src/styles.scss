@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+*{
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+body{
+  margin: 0;
+}
+
+/*GLOBAL CONTAINER AND ALIGNER */
+
+.main-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+app-dashboard{
+  width: 100%;
+}
+.dashboard{
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+  background:white;
+  -webkit-box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+  -moz-box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+  box-shadow: 3px 0px 5px 0px rgba(217,217,217,1);
+}
+
+.component-contatiner-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }  
+
+  .signup-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+  }
+
+  app-signup{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.main-section-actionbar{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  /* background-image: url('./assets/trianglify.svg'); */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
+
+
+.app{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* FONTS */
+
+.main-title{
+    padding: 20px;
+    text-align: center;
+    font-weight: normal;
+    text-underline-position: below;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.habit-subtitle{
+  font-weight: lighter;
+}
+
+.main-section-title{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* COMPONENTS */
+
+app-future{
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+app-present{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+app-past{
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.main-container{
+  width: 100%;
+  height: 80vh;
+}
+
+.main-section-actionbar{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-s; */
+  flex-direction: row;
+  height: 80px;
+  -webkit-box-shadow: 0px 10px 5px -8px rgba(194,194,194,0.38);
+  -moz-box-shadow: 0px 10px 5px -8px rgba(194,194,194,0.38);
+  box-shadow: 0px 10px 5px -8px rgba(194,194,194,0.38);
+}
