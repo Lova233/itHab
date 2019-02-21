@@ -8,8 +8,6 @@ import { MaterialModule as AppMaterialModule } from '../app/app-material-module'
 
 
 import { AppComponent } from './app.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { SigninComponent } from './components/signin/signin.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -42,8 +40,6 @@ import { WeekComponentComponent } from './components/week-component/week-compone
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    SigninComponent,
     DashboardComponent,
     PastComponent,
     PresentComponent,
