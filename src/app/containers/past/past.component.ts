@@ -32,10 +32,13 @@ export class PastComponent implements OnInit {
             habit.color;
             habit.completed.sort((a,b)=> a.Completed_at - b.Completed_at);
             // habit.completed.map(t=>t.Completed_at = moment.unix(t.Completed_at));
+            this.suca(1);
 
             })
           })
-        })}
+        })
+
+      }
 
 
   getCompleted(e){
