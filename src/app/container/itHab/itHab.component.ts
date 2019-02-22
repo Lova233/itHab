@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HabitService } from '../../services/habit.service';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import * as moment from 'moment';
 
 
@@ -10,19 +10,24 @@ import * as moment from 'moment';
   styleUrls: ['./itHab.component.css']
 })
 export class itHabComponent implements OnInit {
-
-  // habitsComplete: any;
-  // habits:any;
-  // allComplete:any;
-  // toShow:any;
+  habits:any;
+  isLoading:boolean;
   isFutureOpen:boolean;
   isPastOpen:boolean;
   isPresentOpen:boolean;
+  monday:Observable<Array<any>>;
+  tuesday:Observable<Array<any>>;
+  wednesday:Observable<Array<any>>;
+  thursday:Observable<Array<any>>;
+  friday:Observable<Array<any>>;
+  saturday:Observable<Array<any>>;
+  sunday:Observable<Array<any>>;
 
 
   constructor(private habitService : HabitService) { }
 
   ngOnInit() {
+    this.getTaks();  
     this.isFutureOpen = true;
       }
 
@@ -41,73 +46,20 @@ export class itHabComponent implements OnInit {
     this.isPastOpen = false;
     this.isFutureOpen = false;
   }
-
-  // getCompleted(e){
-  //   let completed = this.habitsComplete.filter(habit=> habit.Task_id=== e.Task_id);
-  //   return {...e,completed}
-
-  // }
-
-
-  // transform(task,allCompleted,week){
-
-  //   let tempAll = allCompleted;
-  //   allCompleted=[];
-  //   let tempTask = task;
-  //   tempTask.completed = week;
-  //   tempTask.completed = tempTask.completed.map((t)=>{
-  //     let status = tempAll.filter(x=>
-  //       x.Task_id === tempTask.Task_id && t.isSame(moment.unix(x.Completed_at)));
-        
-  //       if(status.length>0){
-
-  //       return status[0].Completed ? {status:"CMP"} : {status:"NC"}
-  //     } else{
-  //       return  {status:"NA"}
-  //     }
-
-  //   })
-
-  //   return {...tempTask,week};
-  // }
-  // getAllCompleted(){
-  //  this.habitsComplete = this.habits.map(h=>this.getCompleted(h))
-  // }
-
-  // getWeeks(numberOfWeeks:number){
-  //   let startDate = moment();
-  //   let weeks=[];
-  //   for(let i=1;i<=numberOfWeeks;i++){
-  //     weeks.push(this.previousWeek(startDate))
-  //     startDate.subtract(i,"weeks");
-  //   }
-  //   console.log(weeks);
-  //   return weeks;
-  // }
-
-  // previousWeek(date){
-  //   let startWeek = date;
-  //   let endWeek = moment(startWeek);
-  //   let week =[]
-  //   startWeek.startOf("week").add(1,"day").subtract(1,"week");
-  //   endWeek.endOf("week").add(1,"day").subtract(1,"week");
-  //   let a= 0;
-  //   while(startWeek.isSameOrBefore(endWeek)){
-
-  //     week.push(moment(startWeek));
-  //     startWeek.add(1,"day");
-  //     a++;
-  //   }
-  //   return week;
-
-  // }
-
-  // getWeekObject(numOfWeek){
-  //   let weeks = this.getWeeks(numOfWeek);
-  //   return weeks.map(w=> this.habits.map(h =>this.transform(h,this.allComplete,w)));
-  // }
-
-  // suca(num){
-  //   this.toShow = this.getWeekObject(num);
-  // }
-}
+  getTaks(){
+    this.habitService.getUserHabits("AndreaLovati").subscribe(
+      habits=> {
+        this.habits=habits.filter(habit=>habit.IsActive);
+        this.habits = this.habits.sort((a,b)=> b.Color.replace("#", "0x")-a.Color.replace("#", "0x"));
+        this.monday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(1)));
+        this.tuesday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(2)));
+        this.wednesday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(3)));
+        this.thursday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(4)));
+        this.friday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(5)));
+        this.saturday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(6)));
+        this.sunday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(7)));
+        this.isLoading = false;
+        console.log(this.monday);
+      }
+   )
+}}

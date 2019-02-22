@@ -1,8 +1,8 @@
-<div class="main-content" *ngIf="!isLoading">
+<div class="main-content">
     <div class="sub-content">
       <div class="habit">
         <h1 class="main-title animated 1 fadeInDown">Habits</h1>
-        <app-habits (createHabit)="createHabit($event)" [habits]="habits" ></app-habits>
+        <app-habits *ngIf="habits" (createHabit)="createHabit($event)" [habits]="habits" ></app-habits>
       </div>
       <div class="habit-pattern">
         <h1 class="main-title animated 1 fadeInDown">Habits Pattern</h1>

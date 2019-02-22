@@ -15,10 +15,8 @@ import { last } from 'rxjs/operators';
 })
 export class HabitsComponent implements OnInit {
   
-  @Input()
-  habits:any;
-  @Output()
-  createHabit : EventEmitter<any> = new EventEmitter();
+  @Input()habits:any;
+  @Output()createHabit : EventEmitter<any> = new EventEmitter();
     
   habitControl = new FormControl();
   frequencies: object[] = [  
@@ -31,20 +29,20 @@ export class HabitsComponent implements OnInit {
     {value: 7,  label:'Sunday'} 
   ];
 
-
-
   frequency:any;
   habitSelected:any;
   isLoading:boolean;
   parsedFqr:Array<any>;
-  faTimes = faTimes;
   e: string;
 
   constructor() { }
 
   ngOnInit() {     
     this.isLoading=true;
-    this.habits = this.habits.sort((a,b)=> a.Color-b.Color);
+    setTimeout(() => {
+      // this.habits = this.habits.sort((a,b)=> a.Color-b.Color);      
+      console.log(this.habits,"habits in habits")
+    }, 3000);
   }
 
   showHabit(habit){
@@ -52,7 +50,6 @@ export class HabitsComponent implements OnInit {
     this.isLoading=false;    
     let parsedDay = this.habitSelected.Frequency.values.sort((a,b)=>a-b).map(x => this.parseDay(x));
     this.e = parsedDay.toString();
-
   }
 
   closeHabit(){

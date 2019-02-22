@@ -3,7 +3,15 @@
       <button (click)="openPast()">Past</button>
       <button (click)="openPresent()">Present</button>
   <div class="future" *ngIf="isFutureOpen">
-    <app-future></app-future>
+    <app-future [habits]="habits" 
+                [monday]="monday | async" 
+                [tuesday]="tuesday | async" 
+                [wednesday]="wednesday | async" 
+                [thursday]="thursday | async" 
+                [friday]="friday | async" 
+                [saturday]="saturday | async" 
+                [sunday]="sunday | async">
+    </app-future>
   </div>
   <div class="past"  *ngIf="isPastOpen">
     <app-past></app-past>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {HabitService} from '../../../services/habit.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { HabitService } from '../../../services/habit.service';
 
 @Component({
   selector: 'app-future',
@@ -10,15 +10,15 @@ export class FutureComponent implements OnInit {
   
   todayDate:Date = new Date();
   isPatternOn: boolean;
-  habits:any;
   isLoading:boolean;
-  monday:Array<any>;
-  tuesday:Array<any>;
-  wednesday:Array<any>;
-  thursday:Array<any>;
-  friday:Array<any>;
-  saturday:Array<any>;
-  sunday:Array<any>;
+  @Input()habits:any;
+  @Input()monday:Array<any>;
+  @Input()tuesday:Array<any>;
+  @Input()wednesday:Array<any>;
+  @Input()thursday:Array<any>;
+  @Input()friday:Array<any>;
+  @Input()saturday:Array<any>;
+  @Input()sunday:Array<any>;
 
  
   constructor(private habitService : HabitService) {
@@ -28,9 +28,10 @@ export class FutureComponent implements OnInit {
   ngOnInit() {
     this.todayDate.toDateString()
     this.isLoading= true;
-    this.getTaks();  
+    setTimeout(() => {
+    console.log(this.habits)
 
-   
+    }, 3000);
   }
 
   showPattern(){
@@ -38,16 +39,11 @@ export class FutureComponent implements OnInit {
   }
 
   createHabit(e){
-    console.log(e.Frequency.values.map(String) , "TO STRIng");
     let freqString = e.Frequency.values.map(String);
-
-
     let newFreq = e.Frequency.values.map(n=>parseInt(n));
     let newFreqHabit= this.habits.filter((habit)=>habit.Task_id ==e.Task_id)[0];
     newFreqHabit.Frequency.values=e.Frequency.values.map(n=>parseInt(n));
     this.habits=  this.habits.filter((habit)=>habit.Task_id !=e.Task_id);
-
-
     this.habits.push(newFreqHabit)
 
 
@@ -67,39 +63,9 @@ export class FutureComponent implements OnInit {
 
     this.habitService.addTask(newHabit).subscribe(res=>{
       this.habitService.activation(habitToReplace).subscribe(res=>{
-        this.getTaks();
+        // this.getTaks();
       });
 
     });
-    
-    this.habits = this.habits.sort((a,b)=> b.Color.replace("#", "0x")-a.Color.replace("#", "0x"));
-    this.monday = this.habits.filter(habit =>  habit.Frequency.values.includes(1));
-    this.tuesday = this.habits.filter(habit =>  habit.Frequency.values.includes(2));
-    this.wednesday = this.habits.filter(habit =>  habit.Frequency.values.includes(3));
-    this.thursday = this.habits.filter(habit =>  habit.Frequency.values.includes(4));
-    this.friday = this.habits.filter(habit =>  habit.Frequency.values.includes(5));
-    this.saturday = this.habits.filter(habit =>  habit.Frequency.values.includes(6));
-    this.sunday = this.habits.filter(habit =>  habit.Frequency.values.includes(7));
   }
-
-  getTaks(){
-    this.habitService.getUserHabits("AndreaLovati").subscribe(
-      habits=> {
-        this.habits=habits.filter(habit=>habit.IsActive)
-        this.habits = this.habits.sort((a,b)=> b.Color.replace("#", "0x")-a.Color.replace("#", "0x"));
-
-        this.monday = this.habits.filter(habit =>  habit.Frequency.values.includes(1));
-        this.tuesday = this.habits.filter(habit =>  habit.Frequency.values.includes(2));
-        this.wednesday = this.habits.filter(habit =>  habit.Frequency.values.includes(3));
-        this.thursday = this.habits.filter(habit =>  habit.Frequency.values.includes(4));
-        this.friday = this.habits.filter(habit =>  habit.Frequency.values.includes(5));
-        this.saturday = this.habits.filter(habit =>  habit.Frequency.values.includes(6));
-        this.sunday = this.habits.filter(habit =>  habit.Frequency.values.includes(7));
-        this.isLoading = false;
-      }
-   )
-  }
-
-
-
 }
