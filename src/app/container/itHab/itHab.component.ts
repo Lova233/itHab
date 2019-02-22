@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HabitService } from '../../services/habit.service';
 import { of, Observable } from 'rxjs';
 import * as moment from 'moment';
@@ -62,4 +62,11 @@ export class itHabComponent implements OnInit {
         console.log(this.monday);
       }
    )
-}}
+}
+saveHabit(habitComplete){
+  const payload={...habitComplete,username:"AndreaLovati",completed_at:null,color:habitComplete.color,description:habitComplete.description};
+
+this.habitService.completed(payload).subscribe(res=>console.log(res));
+
+  }
+}

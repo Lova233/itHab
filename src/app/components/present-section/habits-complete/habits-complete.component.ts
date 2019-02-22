@@ -34,26 +34,16 @@ export class HabitsCompleteComponent implements OnInit {
     console.log(this.habitSelected.Color,"la selezionata")
   }
 
-  completeHabit(){
-  
+  completeHabit(isCompleted){
     let habitCompl= {
       task_id: this.habitSelected.Task_id,
-      completed: true,
+      completed: isCompleted,
       color: this.habitSelected.Color,
       description: this.habitSelected.Description,
     }
     this.completedHabit.emit(habitCompl);
   }
 
-  uncompleteHabit(){
-    let habitCompl= {
-      task_id: this.habitSelected.Task_id,
-      completed: false,
-      color: this.habitSelected.Color,
-      description: this.habitSelected.description,
-    }
-    this.completedHabit.emit(habitCompl);
-  }
 
   parseDay(x:number){
     switch (x){

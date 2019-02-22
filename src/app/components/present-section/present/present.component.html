@@ -1,6 +1,10 @@
-<div class="main-content" *ngIf="!isLoading">
+<div class="main-content">
     <div class="sub-content">
-      <app-habits-complete *ngIf="isLoaded" [habits]="habits" (completedHabit)="completeHabit($event)"></app-habits-complete>
+      <app-habits-complete  
+      [habits]="habits" 
+      (completedHabit)="completeHabit($event)"
+      >
+    </app-habits-complete>
     </div>
 </div>
 

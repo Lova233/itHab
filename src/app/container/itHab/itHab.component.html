@@ -17,6 +17,6 @@
     <app-past></app-past>
   </div>
   <div class="present" *ngIf="isPresentOpen">
-    <app-present></app-present>
+    <app-present (completedPayload)="saveHabit($event)"  [habits]="habits"></app-present>
   </div>
 </div>
