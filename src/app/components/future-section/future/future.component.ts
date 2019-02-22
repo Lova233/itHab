@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HabitService} from '../../services/habit.service';
+import {HabitService} from '../../../services/habit.service';
 
 @Component({
   selector: 'app-future',

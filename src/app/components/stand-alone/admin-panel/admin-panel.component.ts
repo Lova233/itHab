@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import {HabitService} from '../../services/habit.service';
+import {HabitService} from '../../../services/habit.service';
 
 @Component({
   selector: 'app-admin-panel',
