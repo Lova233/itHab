@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule as AppMaterialModule } from '../app/app-material-module';
 
+//* CONTAINER * //
+
+import {itHabComponent} from '../../src/app/container/itHab/itHab..component'
 
 
 import { AppComponent } from './app.component';
@@ -33,11 +35,13 @@ import { HabitComponent } from './components/habit/habit.component';
 import { ParseDayPipe } from './pipes/days.pipe';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { WeekComponentComponent } from './components/week-component/week-component.component';
+import { from } from 'rxjs';
 
 
 
 @NgModule({
   declarations: [
+    itHabComponent,
     AppComponent,
     DashboardComponent,
     PastComponent,
