@@ -20,7 +20,7 @@ export class AdminPanelComponent implements OnInit {
   //  this.end = 1547730178;
 
    this.start =  moment("2018-01-01");
-   this.end = moment("2019-04-30")
+   this.end = moment("2019-03-29")
    this.habitService.getUserHabits("AndreaLovati").subscribe(
     habits=> {
       this.habits=habits.filter(habit=>habit.IsActive)
@@ -42,8 +42,6 @@ export class AdminPanelComponent implements OnInit {
 
 
   generateTaskCompleted(){
- 
-
     let on = true;
     while(on){
       if(this.start.isBefore(this.end)){

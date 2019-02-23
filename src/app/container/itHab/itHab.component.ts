@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HabitService } from '../../services/habit.service';
 import { of, Observable } from 'rxjs';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,9 +23,11 @@ export class itHabComponent implements OnInit {
   friday:Observable<Array<any>>;
   saturday:Observable<Array<any>>;
   sunday:Observable<Array<any>>;
+  allComplete:any;
+  toShow:Observable<any>;
+  habitsComplete:any;
 
-
-  constructor(private habitService : HabitService) { }
+  constructor(private habitService : HabitService, private router: Router) { }
 
   ngOnInit() {
     this.getTaks();  
@@ -60,13 +63,79 @@ export class itHabComponent implements OnInit {
         this.sunday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(7)));
         this.isLoading = false;
         console.log(this.monday);
+        this.habitService.getTasksCompleted("AndreaLovati").subscribe(
+          habits=>{
+           this.allComplete = habits;
+           this.habitsComplete = this.getAllCompleted(habits).map(habit=>{
+              habit.color;
+              habit.completed.sort((a,b)=> a.Completed_at - b.Completed_at);
+              this.changeView(1);
+              })
+          })
       }
    )
+ 
 }
+
+
 saveHabit(habitComplete){
   const payload={...habitComplete,username:"AndreaLovati",completed_at:null,color:habitComplete.color,description:habitComplete.description};
+  this.habitService.completed(payload).subscribe(res=> console.log(res)
+  );
 
-this.habitService.completed(payload).subscribe(res=>console.log(res));
+  }
+  getAllCompleted(habits){
+    const getCompleted = (e)=>{
+      let completed = habits.filter(habit=> habit.Task_id=== e.Task_id);
+      return {...e,completed}
+  
+    }
+   return this.habits.map(h=>getCompleted(h))
+  }
+ 
+  getWeekObject(numOfWeek){
+    const previousWeek = (date)=>{
+      let startWeek = date;
+      let endWeek = moment(startWeek);
+      let week =[]
+      startWeek.startOf("week").add(1,"day").subtract(1,"week");
+      endWeek.endOf("week").add(1,"day").subtract(1,"week");
+      let a= 0;
+      while(startWeek.isSameOrBefore(endWeek)){
+        week.push(moment(startWeek));
+        startWeek.add(1,"day");
+        a++;
+      }
+      return week;
+    }
 
+    const getWeeks = (numberOfWeeks:number)=>{
+      let startDate = moment();
+      let weeks=[];
+      for(let i=1;i<=numberOfWeeks;i++){
+        weeks.push(previousWeek(startDate))
+        startDate.subtract(i,"weeks");
+      }
+      return weeks;
+    }
+    const transform = (task,allCompleted,week)=>{
+      let tempAll = allCompleted;
+      allCompleted=[];
+      let tempTask = task;
+      tempTask.completed = week;
+      tempTask.completed = tempTask.completed.map((t)=>{
+        let status = tempAll.filter(x=>
+          x.Task_id === tempTask.Task_id && t.isSame(moment.unix(x.Completed_at)));
+          if(status.length>0) return status[0].Completed ? {status:"CMP"} : {status:"NC"}
+          else { return  {status:"NA"}}
+      })
+      return {...tempTask,week};
+    }
+    let weeks = getWeeks(numOfWeek);
+    return weeks.map(w=> this.habits.map(h =>transform(h,this.allComplete,w)));
+  }
+
+  changeView(numOfweeks){
+    this.toShow = of(this.getWeekObject(numOfweeks));
   }
 }
