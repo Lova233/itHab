@@ -141,4 +141,38 @@ saveHabit(habitComplete){
     console.log(this.toShow);
     // this.reports = 
   }
+
+
+
+
+
+
+  //************************************FUTURE ************************************
+  createHabit(e){
+    let freqString = e.Frequency.values.map(String);
+    let newFreq = e.Frequency.values.map(n=>parseInt(n));
+    let newFreqHabit= this.habits.filter((habit)=>habit.Task_id ==e.Task_id)[0];
+    newFreqHabit.Frequency.values=e.Frequency.values.map(n=>parseInt(n));
+ 
+    console.log(this.habits,"ciaooo")
+    let newHabit = {
+      username: "AndreaLovati",
+      color: e.Color,
+      frequency: freqString,
+      description: e.Description
+    }
+    
+    let habitToReplace={
+      username : "AndreaLovati",
+      task_id : e.Task_id,
+      isActivated : false
+    }
+
+    this.habitService.addTask(newHabit).subscribe(res=>{
+      this.habitService.activation(habitToReplace).subscribe(res=>{
+        this.getTaks();
+      });
+
+    });
+  }
 }

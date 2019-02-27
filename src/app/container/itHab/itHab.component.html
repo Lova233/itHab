@@ -10,7 +10,8 @@
                 [thursday]="thursday | async" 
                 [friday]="friday | async" 
                 [saturday]="saturday | async" 
-                [sunday]="sunday | async">
+                [sunday]="sunday | async"
+                (createHabitEmit)="createHabit($event)">
     </app-future>
   </div>
   <div class="past"  *ngIf="isPastOpen">
