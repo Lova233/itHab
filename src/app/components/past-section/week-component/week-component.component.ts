@@ -10,11 +10,17 @@ export class WeekComponentComponent implements OnInit {
   week:any;
   @Input()
   toShow:any;
-
+  report:any;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {   
+    this.report =this.week.map(task=>{
+      let completed = task.completed.filter(singleTask=>singleTask.status=="CMP").length;
+      let notcompleted = task.completed.filter(singleTask=>singleTask.status=="NC").length;
+      console.log(completed,notcompleted)
+      return Math.round(completed/(completed+notcompleted)*100);
+    })
 
   }
-
+ 
 }

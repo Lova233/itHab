@@ -1,5 +1,6 @@
 <div class="calendar">
     <div class="habit-row" *ngFor="let i=index, let habits of week">  
         <div class="animated 1 fadeIn delay{{a}}s" *ngFor="let a=index , let habit of habits.completed" [ngStyle]="{'background': week[i].Color, 'border-color': week[i].Color}" [ngClass]="{'completed': habit.status === 'CMP' , 'not-completed': habit.status === 'NC','not-available': habit.status === 'NA', 'habit-b': toShow.length == 1 , 'habit-m': toShow.length == 2 ,'habit-s': toShow.length == 4,'habit-ss': toShow.length >= 5  }" matTooltip={{week[i].Description}}></div>
+        <div [ngStyle]="{'background': week[i].Color, 'border-color': week[i].Color}">{{report[i]}}</div>
     </div>
 </div>

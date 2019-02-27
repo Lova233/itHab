@@ -26,7 +26,7 @@ export class itHabComponent implements OnInit {
   allComplete:any;
   toShow:Observable<any>;
   habitsComplete:any;
-
+  reports:any;
   constructor(private habitService : HabitService, private router: Router) { }
 
   ngOnInit() {
@@ -131,11 +131,14 @@ saveHabit(habitComplete){
       })
       return {...tempTask,week};
     }
+    
     let weeks = getWeeks(numOfWeek);
     return weeks.map(w=> this.habits.map(h =>transform(h,this.allComplete,w)));
   }
 
   changeView(numOfweeks){
     this.toShow = of(this.getWeekObject(numOfweeks));
+    console.log(this.toShow);
+    // this.reports = 
   }
 }
