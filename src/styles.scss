@@ -2,8 +2,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 *{
-  font-family: 'Roboto', sans-serif;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -81,13 +80,27 @@ app-dashboard{
 /* FONTS */
 
 .main-title{
-    padding: 20px;
     text-align: center;
-    font-weight: normal;
     text-underline-position: below;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    color: #4C4C4C;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.main-subtitle{
+  margin:0px;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  color: #4C4C4C;
+  font-size: 2em;
 }
 
 .habit-subtitle{
