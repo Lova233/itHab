@@ -85,3 +85,14 @@ nav{
   height: 50vh;
   padding: 30px 0px 0px 0px;
 }
+
+
+
+/* GENERAL */
+
+article{
+position: fixed;
+margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+left: 0;
+right: 0;
+}
