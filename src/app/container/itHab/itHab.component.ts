@@ -28,21 +28,41 @@ export class itHabComponent implements OnInit {
   toShow:Observable<any>;
   habitsComplete:any;
   reports:any;
-  view: any[] = [900, 400];
+  view: any[] = [400, 400];
   single = [
     {
-      "name": "Germany",
-      "value": 8940000
+      "name": "Drink 2lt water",
+      "value": 5
     },
     {
-      "name": "USA",
-      "value": 5000000
+      "name": "Work Out",
+      "value": 4
     },
     {
-      "name": "France",
-      "value": 7200000
-    }
+      "name": "Code camp",
+      "value": 2
+    },
+    {
+      "name": "Walk 5km",
+      "value": 2
+    },
+    {
+      "name": "Veggie Day",
+      "value": 2
+    },
+    
   ];
+    // options
+    showLegend = false;
+
+    colorScheme = {
+      domain: ['#912AD6', '#00A651', '#ED1E24', '#F4ED59', '#E97825']
+    };
+  
+    // pie
+    showLabels = true;
+    explodeSlices = false;
+    doughnut = true;
   
   constructor(private habitService : HabitService, private router: Router) { }
 

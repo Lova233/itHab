@@ -88,6 +88,13 @@ nav{
 
 
 
+::ng-deep.ngx-charts{
+  position: fixed;
+  top: 196px;
+  right: 200px;
+}
+
+
 /* GENERAL */
 
 article{

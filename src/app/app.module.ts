@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule as AppMaterialModule } from '../app/app-material-module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 //* CONTAINER * //
 
@@ -70,7 +72,8 @@ import { from } from 'rxjs';
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
    ],
   providers: [HabitService,HttpClientModule],
   bootstrap: [AppComponent]
