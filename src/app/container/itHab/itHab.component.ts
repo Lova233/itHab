@@ -3,6 +3,7 @@ import { HabitService } from '../../services/habit.service';
 import { of, Observable } from 'rxjs';
 import * as moment from 'moment';
 import { Router } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @Component({
@@ -27,6 +28,22 @@ export class itHabComponent implements OnInit {
   toShow:Observable<any>;
   habitsComplete:any;
   reports:any;
+  view: any[] = [900, 400];
+  single = [
+    {
+      "name": "Germany",
+      "value": 8940000
+    },
+    {
+      "name": "USA",
+      "value": 5000000
+    },
+    {
+      "name": "France",
+      "value": 7200000
+    }
+  ];
+  
   constructor(private habitService : HabitService, private router: Router) { }
 
   ngOnInit() {

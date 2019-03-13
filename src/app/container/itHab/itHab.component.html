@@ -15,6 +15,19 @@
                 (createHabitEmit)="createHabit($event)">
     </app-future>
 </div>
+<ngx-charts-pie-chart
+[view]="view"
+[scheme]="colorScheme"
+[results]="single"
+[legend]="showLegend"
+[explodeSlices]="explodeSlices"
+[labels]="showLabels"
+[doughnut]="doughnut"
+[gradient]="gradient"
+(select)="onSelect($event)">
+</ngx-charts-pie-chart>
+
+
 <!-- <div style="height:200vh">
       <button (click)="openFuture()">Future</button>
       <button (click)="openPast()">Past</button>
