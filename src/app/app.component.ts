@@ -8,7 +8,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   
-  quotes:object;
+  quotes:any;
   randomQuote:string;
   randomCit:string;
   
@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(){
-    let quotesIndex = Math.floor((Math.random() * 3) + 1)
+    
+
     this.quotes=[
       {quote:"Infuse your life with action", cit:"Bradley Whitford"},
       {quote:"The future depends on what you do today", cit:"Mahatma Gandhi"},
@@ -25,8 +26,9 @@ export class AppComponent implements OnInit {
       // {key:2, quote:"The future depends on what you do today", cit:"Mahatma Gandhi"},
       // {key:2, quote:"The future depends on what you do today", cit:"Mahatma Gandhi"},
     ]
-    this.randomQuote = this.quotes[quotesIndex].quote 
-    this.randomCit = this.quotes[quotesIndex].cit
+    let quote = this.quotes[Math.floor((Math.random() * this.quotes.length))]
+    this.randomQuote = quote.quote 
+    this.randomCit = quote.cit
    
   }
 
