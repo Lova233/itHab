@@ -50,6 +50,18 @@
 
   }
 
+.component-contatiner-col-selected{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  height: 200px;
+  width: 600px;
+  border-radius: 20px;
+  margin-top: 40px;
+
+}
+
 .internal-container{
   position: relative;
   display: flex;

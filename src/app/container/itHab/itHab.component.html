@@ -2,30 +2,42 @@
   <a class="nav-link" (click)="openPast()" [ngClass]="{'active': isPastOpen }"><img class="nav-icon moveone" [ngClass]="{'moveone': isPastOpen}" src="../../../assets/blobPast.svg">past</a>
   <a class="nav-link" (click)="openPresent()" [ngClass]="{'active': isPresentOpen }"><img class="nav-icon movetwo" src="../../../assets/blobPresent.svg">present</a>
   <a class="nav-link" (click)="openFuture()" [ngClass]="{'active': isFutureOpen }"><img class="nav-icon movethree" src="../../../assets/blobFuture.svg">future</a>
+  <button (click)="toggleSidebar()">Toggle sidebar</button>
 </nav>
-<div class="future" *ngIf="isFutureOpen">
-    <app-future [habits]="habits" 
-                [monday]="monday | async" 
-                [tuesday]="tuesday | async" 
-                [wednesday]="wednesday | async" 
-                [thursday]="thursday | async" 
-                [friday]="friday | async" 
-                [saturday]="saturday | async" 
-                [sunday]="sunday | async"
-                (createHabitEmit)="createHabit($event)">
-    </app-future>
-</div>
-<ngx-charts-pie-chart
-[view]="view"
-[scheme]="colorScheme"
-[results]="single"
-[legend]="showLegend"
-[explodeSlices]="explodeSlices"
-[labels]="showLabels"
-[doughnut]="doughnut"
-[gradient]="gradient"
-(select)="onSelect($event)">
-</ngx-charts-pie-chart>
+<!-- Container for sidebar(s) + page content -->
+<ng-sidebar-container>
+    <!-- A sidebar -->
+    <ng-sidebar [(opened)]="opened" dock="true" dockedSize="10px" mode="over" (click)="toggleSidebar()">
+      <app-dashboard></app-dashboard>
+      <!-- <ngx-charts-pie-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+      </ngx-charts-pie-chart> -->
+    </ng-sidebar>
+    <!-- Page content -->
+    <div ng-sidebar-content>
+        <div class="future" *ngIf="isFutureOpen">
+            <app-future [habits]="habits" 
+                        [monday]="monday | async" 
+                        [tuesday]="tuesday | async" 
+                        [wednesday]="wednesday | async" 
+                        [thursday]="thursday | async" 
+                        [friday]="friday | async" 
+                        [saturday]="saturday | async" 
+                        [sunday]="sunday | async"
+                        (createHabitEmit)="createHabit($event)">
+            </app-future>
+        </div>        
+    </div>
+</ng-sidebar-container>
+<!--  -->
 
 <!-- <div style="height:200vh">
       <button (click)="openFuture()">Future</button>

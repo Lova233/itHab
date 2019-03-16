@@ -1,4 +1,5 @@
 import { Component, OnInit, Input  } from '@angular/core';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import * as moment from 'moment';
 
 @Component({

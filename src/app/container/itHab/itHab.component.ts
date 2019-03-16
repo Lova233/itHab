@@ -28,32 +28,14 @@ export class itHabComponent implements OnInit {
   toShow:Observable<any>;
   habitsComplete:any;
   reports:any;
-  view: any[] = [400, 400];
   single:any;
-  // single = [
-  //   {
-  //     "name": "Drink 2lt water",
-  //     "value": 5
-  //   },
-  //   {
-  //     "name": "Work Out",
-  //     "value": 4
-  //   },
-  //   {
-  //     "name": "Code camp",
-  //     "value": 2
-  //   },
-  //   {
-  //     "name": "Walk 5km",
-  //     "value": 2
-  //   },
-  //   {
-  //     "name": "Veggie Day",
-  //     "value": 2
-  //   },
-    
-  // ];
-    // options
+  view: any[] = [400, 400];
+  showLabels = true;
+  explodeSlices = false;
+  doughnut = true;
+  opened: boolean = false;
+ 
+    options
     showLegend = false;
 
     colorScheme = {
@@ -61,19 +43,12 @@ export class itHabComponent implements OnInit {
     };
   
     // pie
-    showLabels = true;
-    explodeSlices = false;
-    doughnut = true;
+  
   
   constructor(private habitService : HabitService, private router: Router) { }
 
+
   ngOnInit() {
-    this.single= this.habits.map(h=>{
-      return ({
-        name: h.Description,
-        value: h.Frequency.values.length
-      })
-    })
     this.getTaks();  
     this.isFutureOpen = true;
       }
@@ -105,8 +80,13 @@ export class itHabComponent implements OnInit {
         this.friday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(5)));
         this.saturday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(6)));
         this.sunday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(7)));
+        this.single= this.habits.map(h=>{
+          return ({
+            name: h.Description,
+            value: h.Frequency.values.length
+          })
+        })
         this.isLoading = false;
-        console.log(this.monday);
         this.habitService.getTasksCompleted("AndreaLovati").subscribe(
           habits=>{
            this.allComplete = habits;
@@ -185,6 +165,9 @@ saveHabit(habitComplete){
     console.log(this.toShow);
     // this.reports = 
   }
+  toggleSidebar(){
+    this.opened = !this.opened;
+  }
 
 
 
@@ -219,4 +202,5 @@ saveHabit(habitComplete){
 
     });
   }
+
 }

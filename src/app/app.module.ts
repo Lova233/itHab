@@ -23,7 +23,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { PastComponent } from './components/past-section/past/past.component';
 import { PresentComponent } from './components/present-section/present/present.component';
 import { FutureComponent } from './components/future-section/future/future.component';
-import { NavbarComponent } from '../../src/app/components/stand-alone/navbar/navbar.component';
+import { SidebarModule } from 'ng-sidebar';
+
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HabitsComponent } from './components/habits/habits.component';
@@ -49,7 +50,6 @@ import { from } from 'rxjs';
     PastComponent,
     PresentComponent,
     FutureComponent,
-    NavbarComponent,
     HabitsComponent,
     HabitsPatternComponent,
     HabitsCompleteComponent,
@@ -73,8 +73,9 @@ import { from } from 'rxjs';
     ReactiveFormsModule,
     AppMaterialModule,
     HttpClientModule,
-    NgxChartsModule
-   ],
+    NgxChartsModule,
+    SidebarModule.forRoot()
+    ],
   providers: [HabitService,HttpClientModule],
   bootstrap: [AppComponent]
 })

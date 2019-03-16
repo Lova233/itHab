@@ -7,8 +7,8 @@
     </div>
 </div>
 
-<div class="component-contatiner-col" *ngIf="habitSelected">
-  <div class="internal-container">
+<div class="component-contatiner-col-selected" >
+  <div class="internal-container" *ngIf="habitSelected">
     <div class="habit-container">
         <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" class="animated 1 fadeIn"></div>
         <mat-form-field>
