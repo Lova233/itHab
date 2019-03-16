@@ -16,8 +16,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(){
-    
-
+    let quotesIndex = (Math.random() * 3)
     this.quotes=[
       {quote:"Infuse your life with action", cit:"Bradley Whitford"},
       {quote:"The future depends on what you do today", cit:"Mahatma Gandhi"},

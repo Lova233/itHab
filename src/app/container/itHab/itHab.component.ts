@@ -29,29 +29,30 @@ export class itHabComponent implements OnInit {
   habitsComplete:any;
   reports:any;
   view: any[] = [400, 400];
-  single = [
-    {
-      "name": "Drink 2lt water",
-      "value": 5
-    },
-    {
-      "name": "Work Out",
-      "value": 4
-    },
-    {
-      "name": "Code camp",
-      "value": 2
-    },
-    {
-      "name": "Walk 5km",
-      "value": 2
-    },
-    {
-      "name": "Veggie Day",
-      "value": 2
-    },
+  single:any;
+  // single = [
+  //   {
+  //     "name": "Drink 2lt water",
+  //     "value": 5
+  //   },
+  //   {
+  //     "name": "Work Out",
+  //     "value": 4
+  //   },
+  //   {
+  //     "name": "Code camp",
+  //     "value": 2
+  //   },
+  //   {
+  //     "name": "Walk 5km",
+  //     "value": 2
+  //   },
+  //   {
+  //     "name": "Veggie Day",
+  //     "value": 2
+  //   },
     
-  ];
+  // ];
     // options
     showLegend = false;
 
@@ -67,6 +68,12 @@ export class itHabComponent implements OnInit {
   constructor(private habitService : HabitService, private router: Router) { }
 
   ngOnInit() {
+    this.single= this.habits.map(h=>{
+      return ({
+        name: h.Description,
+        value: h.Frequency.values.length
+      })
+    })
     this.getTaks();  
     this.isFutureOpen = true;
       }
