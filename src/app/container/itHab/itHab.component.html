@@ -8,7 +8,14 @@
 <ng-sidebar-container>
     <!-- A sidebar -->
     <ng-sidebar [(opened)]="opened" dock="true" dockedSize="10px" mode="over" (click)="toggleSidebar()">
-      <app-dashboard></app-dashboard>
+      <app-dashboard  [monday]="monday | async" 
+      [tuesday]="tuesday | async" 
+      [wednesday]="wednesday | async" 
+      [thursday]="thursday | async" 
+      [friday]="friday | async" 
+      [saturday]="saturday | async" 
+      [sunday]="sunday | async">
+    </app-dashboard>
       <!-- <ngx-charts-pie-chart
           [view]="view"
           [scheme]="colorScheme"
@@ -25,13 +32,6 @@
     <div ng-sidebar-content>
         <div class="future" *ngIf="isFutureOpen">
             <app-future [habits]="habits" 
-                        [monday]="monday | async" 
-                        [tuesday]="tuesday | async" 
-                        [wednesday]="wednesday | async" 
-                        [thursday]="thursday | async" 
-                        [friday]="friday | async" 
-                        [saturday]="saturday | async" 
-                        [sunday]="sunday | async"
                         (createHabitEmit)="createHabit($event)">
             </app-future>
         </div>        

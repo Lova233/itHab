@@ -9,10 +9,16 @@ import * as moment from 'moment';
 })
 export class DashboardComponent implements OnInit {
 
-  @Input()
-  habits:any;
   isLoading:boolean;
   today:string;
+  @Input()habits:any;
+  @Input()monday:Array<any>;
+  @Input()tuesday:Array<any>;
+  @Input()wednesday:Array<any>;
+  @Input()thursday:Array<any>;
+  @Input()friday:Array<any>;
+  @Input()saturday:Array<any>;
+  @Input()sunday:Array<any>;
 
   constructor() { }
 

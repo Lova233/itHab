@@ -12,13 +12,6 @@ export class FutureComponent implements OnInit {
   isPatternOn: boolean;
   isLoading:boolean;
   @Input()habits:any;
-  @Input()monday:Array<any>;
-  @Input()tuesday:Array<any>;
-  @Input()wednesday:Array<any>;
-  @Input()thursday:Array<any>;
-  @Input()friday:Array<any>;
-  @Input()saturday:Array<any>;
-  @Input()sunday:Array<any>;
   @Output() createHabitEmit:EventEmitter<any> = new EventEmitter();
  
   constructor(private habitService : HabitService) {
@@ -29,8 +22,6 @@ export class FutureComponent implements OnInit {
     this.todayDate.toDateString()
     this.isLoading= true;
     setTimeout(() => {
-    console.log(this.habits)
-
     }, 3000);
   }
 
