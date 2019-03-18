@@ -1,0 +1,83 @@
+
+.main-container{
+  
+}
+.main-menu-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  padding:25px 15px 0 15px;
+  transition: transform .2s; /* Animation */
+  filter: opacity(0.5);
+  transform: translateZ(0);
+  backface-visibility: hidden
+}
+
+.main-menu-link:hover{
+  transform: scale(1.2); 
+  filter: opacity(1)
+}
+
+.main-menu-icon{
+  width: 100%;
+  max-width: 500px;
+}
+
+.main-menu{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.home-link{
+  position: fixed;
+  left: 5%;
+  top: 2%;
+}
+
+.moveone{
+  transform-origin: 50% 50%;
+  animation: moveone 10s ease-in-out infinite;
+}
+.movetwo{
+  transform-origin: 50% 50%;
+  animation: movetwo 10s ease-in-out infinite;
+}
+.movethree{
+  transform-origin: 50% 50%;  
+  animation: movethree 10s ease-in-out infinite;
+}
+
+
+@keyframes moveone {
+  0%   { transform: scale(1)   translate(0px, 1px); }
+  20%  { transform: scale(0.8) translate(1px, 0px) rotate(20deg); }
+  40%  { transform: scale(0.9) translate(1px, 0px) rotate(-20deg); }
+  60%  { transform: scale(0.8) translate(2px, 1px) rotate(250deg); }
+  80%  { transform: scale(0.9) translate(0px, 2px) rotate(20deg); }
+  100% { transform: scale(1)   translate(0px, 1px); }
+}
+
+@keyframes movetwo {
+  0%   { transform: scale(1)   translate(0px, 1px); }
+  20%  { transform: scale(0.8) translate(1px, 0px) rotate(-20deg); }
+  40%  { transform: scale(0.9) translate(2px, 0px) rotate(20deg); }
+  60%  { transform: scale(0.8) translate(1px, 2px) rotate(-100deg); }
+  80%  { transform: scale(0.9) translate(0px, 3px) rotate(-15deg); }
+  100% { transform: scale(1)   translate(0px, 1px); }
+}
+
+@keyframes movethree {
+  0%   { transform: scale(1)   translate(0px, 1px); }
+  20%  { transform: scale(0.8) translate(2px, 0px) rotate(20deg); }
+  40%  { transform: scale(0.9) translate(1px, 0px) rotate(-10deg); }
+  60%  { transform: scale(0.8) translate(1px, 2px) rotate(-200deg); }
+  80%  { transform: scale(0.9) translate(1px, 2px) rotate(-10deg); }
+  100% { transform: scale(1)   translate(0px, 1px); }
+}

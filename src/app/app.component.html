@@ -1,9 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <app-navbar></app-navbar> -->
 <div class="main-container">
-   <h1> {{quotesIndex}}</h1>
-
- <it-hab></it-hab>
+    <a class="home-link" (click)="goToMainMenu()"><img class="logo" src="../../../assets/Group 7.svg" alt=""></a>
+    <section class="main-menu" *ngIf="isMenuOpen">
+        <a class="main-menu-link" (click)="menuOpenPast()"><img class="main-menu-icon moveone" src="../../../assets/blobPast.svg"></a>
+        <a class="main-menu-link" (click)="menuOpenPresent()"><img class="main-menu-icon movetwo" src="../../../assets/blobPresent.svg"></a>
+        <a class="main-menu-link" (click)="menuOpenFuture()"><img class="main-menu-icon movethree" src="../../../assets/blobFuture.svg"></a>
+    </section>
+ <it-hab *ngIf="isPastOpen || isFutureOpen || isPresentOpen" [isPastOpen]="isPastOpen" [isFutureOpen]="isFutureOpen" [isPresentOpen]="isPresentOpen" ></it-hab>
  <article>
     <h3 class="quote">{{randomQuote}}</h3>
     <p class="cit">{{randomCit}}</p>

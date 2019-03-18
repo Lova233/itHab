@@ -11,11 +11,16 @@ export class AppComponent implements OnInit {
   quotes:any;
   randomQuote:string;
   randomCit:string;
-  
+  isMenuOpen:boolean=true;
+  isPastOpen:boolean;
+  isPresentOpen:boolean;
+  isFutureOpen:boolean;
+
+
   constructor() { }
 
 
-  ngOnInit(){
+ngOnInit(){
     let quotesIndex = (Math.random() * 3)
     this.quotes=[
       {quote:"Infuse your life with action", cit:"Bradley Whitford"},
@@ -30,7 +35,24 @@ export class AppComponent implements OnInit {
     this.randomCit = quote.cit
    
   }
-
+menuOpenFuture(){
+  this.isFutureOpen = true;
+  this.isMenuOpen = !this.isMenuOpen;
+} 
+menuOpenPresent(){
+  this.isPresentOpen = true;
+  this.isMenuOpen = !this.isMenuOpen;
+} 
+menuOpenPast(){
+  this.isPastOpen = true;
+  this.isMenuOpen = !this.isMenuOpen;
+} 
+goToMainMenu(){
+  this.isMenuOpen = !this.isMenuOpen;
+  this.isFutureOpen = false;
+  this.isPresentOpen = false;
+  this.isPastOpen = false;
+}
 
 
 

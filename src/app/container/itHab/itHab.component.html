@@ -1,11 +1,10 @@
+
 <nav>
-  <a class="home-link"><img class="logo" src="../../../assets/Group 7.svg" alt=""></a>
-  <a class="nav-link" (click)="openPast()" [ngClass]="{'active': isPastOpen }"><img class="nav-icon moveone" [ngClass]="{'moveone': isPastOpen}" src="../../../assets/blobPast.svg">past</a>
+  <a class="nav-link" (click)="openPast()" [ngClass]="{'active': isPastOpen }"><img class="nav-icon moveone" src="../../../assets/blobPast.svg">past</a>
   <a class="nav-link" (click)="openPresent()" [ngClass]="{'active': isPresentOpen }"><img class="nav-icon movetwo" src="../../../assets/blobPresent.svg">present</a>
   <a class="nav-link" (click)="openFuture()" [ngClass]="{'active': isFutureOpen }"><img class="nav-icon movethree" src="../../../assets/blobFuture.svg">future</a>
-  <button (click)="toggleSidebar()">Toggle sidebar</button>
+  <!-- <button (click)="toggleSidebar()">Toggle sidebar</button> -->
 </nav>
-<!-- Container for sidebar(s) + page content -->
 <ng-sidebar-container>
     <!-- A sidebar -->
     <ng-sidebar [(opened)]="opened" dock="true" dockedSize="10px" mode="over" (click)="toggleSidebar()">
@@ -21,15 +20,17 @@
       >
     </app-dashboard>
     </ng-sidebar>
-    <!-- Page content -->
     <div ng-sidebar-content>
         <div class="future" *ngIf="isFutureOpen">
-            <app-future [habits]="habits" 
-                        (createHabitEmit)="createHabit($event)">
-            </app-future>
+          <app-future [habits]="habits" 
+                      (createHabitEmit)="createHabit($event)">
+          </app-future>
         </div>
         <div class="present" *ngIf="isPresentOpen">
-            <app-present (completedPayload)="saveHabit($event)"  [habits]="habits"></app-present>
+          <app-present 
+                      [habits]="habits"
+                      (completedPayload)="saveHabit($event)">
+          </app-present>
         </div>        
     </div>
 </ng-sidebar-container>

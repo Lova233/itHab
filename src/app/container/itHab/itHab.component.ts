@@ -14,9 +14,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 export class itHabComponent implements OnInit {
   habits:any;
   isLoading:boolean;
-  isFutureOpen:boolean;
-  isPastOpen:boolean;
-  isPresentOpen:boolean;
+  @Input()isFutureOpen:boolean;
+  @Input()isPastOpen:boolean;
+  @Input()isPresentOpen:boolean;
   monday:Observable<Array<any>>;
   tuesday:Observable<Array<any>>;
   wednesday:Observable<Array<any>>;
@@ -29,6 +29,7 @@ export class itHabComponent implements OnInit {
   toShow:Observable<any>;
   habitsComplete:any;
   reports:any;
+  isMainMenuOpen:boolean = true;
   
   opened: boolean = false;
 
@@ -41,13 +42,13 @@ export class itHabComponent implements OnInit {
 
   ngOnInit() {
     this.getTaks();  
-    this.isFutureOpen = true;
-      }
+  }
 
   openFuture(){
     this.isFutureOpen = true;
     this.isPastOpen = false;
     this.isPresentOpen = false;
+    console.log(this.isFutureOpen,"norm")
   }
   openPast(){
     this.isPastOpen = true;
@@ -59,6 +60,37 @@ export class itHabComponent implements OnInit {
     this.isPastOpen = false;
     this.isFutureOpen = false;
   }
+
+  menuOpenFuture(){
+    this.isFutureOpen = true;
+    this.isPastOpen = false;
+    this.isPresentOpen = false;
+    this.isMainMenuOpen = false;
+  }
+  menuOpenPast(){
+    this.isPastOpen = true;
+    this.isFutureOpen = false;
+    this.isPresentOpen = false;
+    this.isMainMenuOpen = false;
+  }
+  menuOpenPresent(){
+    this.isPresentOpen = true;
+    this.isPastOpen = false;
+    this.isFutureOpen = false;
+    this.isMainMenuOpen = false;
+  }
+
+  goToMainMenu(){
+    this.isMainMenuOpen = true;
+  }
+
+
+
+
+
+
+
+
   getTaks(){
     this.habitService.getUserHabits("AndreaLovati").subscribe(
       habits=> {

@@ -18,12 +18,13 @@ nav{
   filter: opacity(0.5);
   transform: translateZ(0);
   backface-visibility: hidden;
-
 }
 .nav-link:hover{
   transform: scale(1.2); 
   filter: opacity(1)
 }
+
+
 .active{
   text-decoration: underline;
   filter: opacity(1);
@@ -70,11 +71,8 @@ app-dashboard{
 
 }
 
-.home-link{
-  position: fixed;
-    left: 5%;
-    top: 2%;
-}
+
+
 
 @keyframes moveone {
   0%   { transform: scale(1)   translate(0px, 1px); }
