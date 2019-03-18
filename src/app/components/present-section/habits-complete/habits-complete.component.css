@@ -5,10 +5,11 @@
 
 
 #habit{
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border: 1px solid transparent;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .habit-container{
@@ -16,7 +17,11 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
+  padding:20px;
   
+}
+.hide{
+  display: none;
 }
 
 .selected-habit-container{
@@ -128,6 +133,10 @@
 .close:hover{
   transform: scale(1.1); 
 }
+.component-contatiner-col-stable{
+  height: 150px;
+  width: 600px;
+}
 
 .close{
   position: relative;
@@ -158,8 +167,15 @@
   justify-content: center;
   flex-direction: column; 
   width: 90%;
-  top: -10%;
 
+}
+
+.internal-container-complete{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
 }
 
 

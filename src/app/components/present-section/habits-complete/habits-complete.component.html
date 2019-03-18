@@ -5,12 +5,12 @@
         </div> 
     </div>
 </div>
-<div class="component-contatiner-col" *ngIf="habitSelected">
-  <div class="internal-container">
+<div class="component-contatiner-col-stable" >
+  <div class="internal-container-complete" *ngIf="habitSelected">
       <h1 class="habit-subtitle">Have you "{{habitSelected.Description}}" today Andrea?</h1>
         <div class="habit-container">
-            <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" (click)="completeHabit(true)" >yes</div>
-            <div id="habit" [ngStyle]="{'border-color':   habitSelected.Color}" (click)="completeHabit(false)">nope</div>
+            <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" (click)="completeHabit(true)" ></div>
+            <div id="habit" [ngStyle]="{'border-color':   habitSelected.Color}" (click)="completeHabit(false)"></div>
         </div>
 </div>
     

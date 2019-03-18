@@ -28,7 +28,6 @@ export class HabitsCompleteComponent implements OnInit {
   }
   showHabit(habit){
     this.habitSelected = habit;
-    console.log(this.habitSelected.Color,"la selezionata")
   }
 
   completeHabit(isCompleted){
@@ -38,6 +37,7 @@ export class HabitsCompleteComponent implements OnInit {
       color: this.habitSelected.Color,
       description: this.habitSelected.Description,
     }
-    this.completedHabit.emit(habitCompl);
+    console.log(habitCompl,"fatto")
+    // this.completedHabit.emit(habitCompl);
   }
 }
