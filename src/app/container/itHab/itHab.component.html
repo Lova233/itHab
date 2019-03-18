@@ -31,6 +31,12 @@
                       [habits]="habits"
                       (completedPayload)="saveHabit($event)">
           </app-present>
+        </div>
+        <div class="past"  *ngIf="isPastOpen">
+          <app-past
+                      [toShow]="toShow | async"
+                      (changeViewEmitter)="changeView($event)">
+          </app-past>
         </div>        
     </div>
 </ng-sidebar-container>
