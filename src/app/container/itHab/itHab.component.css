@@ -57,7 +57,7 @@ app-dashboard{
 }
 ::ng-deep.ng-sidebar--left{
   background:	rgb(255,255,255,0.9);
-  width: 600px;
+  width: auto;
   height: 100%;
   /* margin-top: 10%; */
   position: fixed!important;

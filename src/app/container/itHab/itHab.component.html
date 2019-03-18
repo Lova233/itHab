@@ -26,6 +26,9 @@
             <app-future [habits]="habits" 
                         (createHabitEmit)="createHabit($event)">
             </app-future>
+        </div>
+        <div class="present" *ngIf="isPresentOpen">
+            <app-present (completedPayload)="saveHabit($event)"  [habits]="habits"></app-present>
         </div>        
     </div>
 </ng-sidebar-container>

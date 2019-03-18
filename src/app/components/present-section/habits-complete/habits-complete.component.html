@@ -1,15 +1,11 @@
 <div class="component-contatiner-col" >
     <div class="internal-container">
-    <h1>{{parsedToday}}</h1>
         <div class="habit-container">
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of todaysHabit, let i = index" [habit]="habit" (click)="showHabit(habit)"></app-habit> 
         </div> 
     </div>
 </div>
 <div class="component-contatiner-col" *ngIf="habitSelected">
-  <!--
-  MANDARE -- ID  COMPLETED
--->
   <div class="internal-container">
       <h1 class="habit-subtitle">Have you complete {{habitSelected.Description}}</h1>
         <div class="habit-container">

@@ -18,8 +18,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
+  height: 85%;
   width: 100%;
+}
+
+.sidebar-title-container{
+  margin-bottom: 15px;
 }
 ::ng-deep ngx-charts-pie-chart{
   display: flex;

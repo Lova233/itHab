@@ -21,10 +21,10 @@ export class DashboardComponent implements OnInit {
   @Input()saturday:Array<any>;
   @Input()sunday:Array<any>;
   customColors:Array<any>;
-  view: any[] = [400, 400];
-  showLabels = true;
+  view: any[] = [250, 250];
+  showLabels = false;
   explodeSlices = false;
-  doughnut = true;
+  doughnut = false;
   showLegend = false;
   colorScheme = {
       domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']	
