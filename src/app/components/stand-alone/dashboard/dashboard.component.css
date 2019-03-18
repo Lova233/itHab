@@ -17,6 +17,9 @@
 .sidebar-container{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
 }
 ::ng-deep ngx-charts-pie-chart{
   display: flex;
@@ -26,7 +29,9 @@
 
 
 /* THYPO */
-
+.main-title{
+  margin: 0px;
+}
 .dashboard-title{
   margin: 0 auto;
   text-align: left;

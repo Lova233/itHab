@@ -20,23 +20,32 @@ export class DashboardComponent implements OnInit {
   @Input()friday:Array<any>;
   @Input()saturday:Array<any>;
   @Input()sunday:Array<any>;
-
+  customColors:Array<any>;
   view: any[] = [400, 400];
   showLabels = true;
   explodeSlices = false;
   doughnut = true;
-  options
   showLegend = false;
-
   colorScheme = {
-      domain: ['#912AD6', '#00A651', '#ED1E24', '#F4ED59', '#E97825']
+      domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']	
     };
+ 
+    // F4ED71 912AD6
 
   constructor() { }
 
   ngOnInit() {
     this.today = moment().format("MMMM DD YYYY"); 
     this.isLoading=true;
+    this.customColors = [
+      { 
+        name: this.single[0].name,
+        value: '#0000ff'
+      }
+  ];
+    setTimeout(() => {
+      console.log(this.single)
+    }, 3000);
     
   }
 
