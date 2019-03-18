@@ -37,16 +37,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.today = moment().format("MMMM DD YYYY"); 
     this.isLoading=true;
-    this.customColors = [
-      { 
-        name: this.single[0].name,
-        value: '#0000ff'
-      }
-  ];
-    setTimeout(() => {
-      console.log(this.single)
-    }, 3000);
-    
   }
 
 }

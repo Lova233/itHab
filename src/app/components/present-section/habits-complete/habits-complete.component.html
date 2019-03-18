@@ -7,7 +7,7 @@
 </div>
 <div class="component-contatiner-col" *ngIf="habitSelected">
   <div class="internal-container">
-      <h1 class="habit-subtitle">Have you complete {{habitSelected.Description}}</h1>
+      <h1 class="habit-subtitle">Have you "{{habitSelected.Description}}" today Andrea?</h1>
         <div class="habit-container">
             <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" (click)="completeHabit(true)" >yes</div>
             <div id="habit" [ngStyle]="{'border-color':   habitSelected.Color}" (click)="completeHabit(false)">nope</div>
