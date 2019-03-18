@@ -1,4 +1,5 @@
-<nav> 
+<nav>
+  <a class="home-link"><img class="logo" src="../../../assets/Group 7.svg" alt=""></a>
   <a class="nav-link" (click)="openPast()" [ngClass]="{'active': isPastOpen }"><img class="nav-icon moveone" [ngClass]="{'moveone': isPastOpen}" src="../../../assets/blobPast.svg">past</a>
   <a class="nav-link" (click)="openPresent()" [ngClass]="{'active': isPresentOpen }"><img class="nav-icon movetwo" src="../../../assets/blobPresent.svg">present</a>
   <a class="nav-link" (click)="openFuture()" [ngClass]="{'active': isFutureOpen }"><img class="nav-icon movethree" src="../../../assets/blobFuture.svg">future</a>
