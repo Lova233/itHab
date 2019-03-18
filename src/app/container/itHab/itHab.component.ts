@@ -24,23 +24,14 @@ export class itHabComponent implements OnInit {
   friday:Observable<Array<any>>;
   saturday:Observable<Array<any>>;
   sunday:Observable<Array<any>>;
+  single:any;
   allComplete:any;
   toShow:Observable<any>;
   habitsComplete:any;
   reports:any;
-  single:any;
-  view: any[] = [400, 400];
-  showLabels = true;
-  explodeSlices = false;
-  doughnut = true;
+  
   opened: boolean = false;
- 
-    options
-    showLegend = false;
 
-    colorScheme = {
-      domain: ['#912AD6', '#00A651', '#ED1E24', '#F4ED59', '#E97825']
-    };
   
     // pie
   
@@ -80,13 +71,15 @@ export class itHabComponent implements OnInit {
         this.friday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(5)));
         this.saturday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(6)));
         this.sunday = of(this.habits.filter(habit =>  habit.Frequency.values.includes(7)));
-        this.single= this.habits.map(h=>{
+        this.single = this.habits.map(h=>{
           return ({
             name: h.Description,
-            value: h.Frequency.values.length
+            value: h.Frequency.values.length,
+            color: h.Color,
           })
         })
         this.isLoading = false;
+        console.log(this.single,"single")
         this.habitService.getTasksCompleted("AndreaLovati").subscribe(
           habits=>{
            this.allComplete = habits;

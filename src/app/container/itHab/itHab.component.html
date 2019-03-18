@@ -8,25 +8,17 @@
 <ng-sidebar-container>
     <!-- A sidebar -->
     <ng-sidebar [(opened)]="opened" dock="true" dockedSize="10px" mode="over" (click)="toggleSidebar()">
-      <app-dashboard  [monday]="monday | async" 
+      <app-dashboard  
+      [monday]="monday | async" 
       [tuesday]="tuesday | async" 
       [wednesday]="wednesday | async" 
       [thursday]="thursday | async" 
       [friday]="friday | async" 
       [saturday]="saturday | async" 
-      [sunday]="sunday | async">
+      [sunday]="sunday | async"
+      [single]="single"
+      >
     </app-dashboard>
-      <!-- <ngx-charts-pie-chart
-          [view]="view"
-          [scheme]="colorScheme"
-          [results]="single"
-          [legend]="showLegend"
-          [explodeSlices]="explodeSlices"
-          [labels]="showLabels"
-          [doughnut]="doughnut"
-          [gradient]="gradient"
-          (select)="onSelect($event)">
-      </ngx-charts-pie-chart> -->
     </ng-sidebar>
     <!-- Page content -->
     <div ng-sidebar-content>

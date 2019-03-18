@@ -14,6 +14,17 @@
   width: 80%; */
 }
 
+.sidebar-container{
+  display: flex;
+  flex-direction: column;
+}
+::ng-deep ngx-charts-pie-chart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 /* THYPO */
 
 .dashboard-title{
