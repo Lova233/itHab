@@ -21,11 +21,12 @@ export class DashboardComponent implements OnInit {
   @Input()saturday:Array<any>;
   @Input()sunday:Array<any>;
   customColors:Array<any>;
-  view: any[] = [250, 250];
-  showLabels = false;
+  view: any[] = [400, 400];
+  showLabels = true;
   explodeSlices = false;
-  doughnut = false;
+  doughnut = true;
   showLegend = false;
+  animations = true;
   colorScheme = {
       domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']	
     };
