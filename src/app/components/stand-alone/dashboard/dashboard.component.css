@@ -17,9 +17,13 @@
 .sidebar-container{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   height: 85%;
   width: 100%;
+}
+
+.main-subtitle{
+  font-size: 1em;
 }
 
 .sidebar-title-container{

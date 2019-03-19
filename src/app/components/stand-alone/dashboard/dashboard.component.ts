@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   @Input()saturday:Array<any>;
   @Input()sunday:Array<any>;
   customColors:Array<any>;
-  view: any[] = [400, 400];
+  view: any[] = [350, 350];
   showLabels = true;
   explodeSlices = false;
   doughnut = true;
