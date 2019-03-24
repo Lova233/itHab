@@ -11,6 +11,7 @@ export class WeekComponentComponent implements OnInit {
   @Input()
   toShow:any;
   report:any;
+  weekDays:any;
   constructor() { }
 
   ngOnInit() {   
@@ -20,7 +21,7 @@ export class WeekComponentComponent implements OnInit {
       console.log(completed,notcompleted)
       return Math.round(completed/(completed+notcompleted)*100);
     })
-
+    this.weekDays = ['Mon','Tue','Wed','Thr','Fri','Sat','Sun']
   }
  
 }

@@ -1,8 +1,11 @@
 .records-grid{
   width: 60%;
   display: grid;
+  grid-gap: 40px;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 }
+
+
 
 .records-grid > app-habit-records{
   display: flex;
