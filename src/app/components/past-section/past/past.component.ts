@@ -16,10 +16,13 @@ export class PastComponent implements OnInit {
   @Output()
   changeViewEmitter : EventEmitter<number> = new EventEmitter()
 
+  isHistoryOpen:boolean=false;
+
   constructor(private habitService : HabitService) { }
 
   ngOnInit() {}
   changeView(numOfWeek){
     this.changeViewEmitter.emit(numOfWeek);
+    this.isHistoryOpen = !this.isHistoryOpen
   }
 }

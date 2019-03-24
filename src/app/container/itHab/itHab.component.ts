@@ -30,7 +30,6 @@ export class itHabComponent implements OnInit {
   habitsComplete:any;
   reports:any;
   isMainMenuOpen:boolean = true;
-  
   opened: boolean = false;
 
   

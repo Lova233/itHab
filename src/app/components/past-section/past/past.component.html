@@ -1,21 +1,30 @@
 
 <div class="main-content" *ngIf="!isLoading">
-  <div style="display: flex; justify-content: space-between; position: absolute; bottom:90px">
-    <button (click)="changeView(1)">One Week</button>
-    <button (click)="changeView(2)">Two Weeks</button>
-    <button (click)="changeView(4)">Four Weeks</button>
-    <button (click)="changeView(8)">Eight Weeks</button>
-    <button (click)="changeView(12)">Twelve Weeks</button>
-    <button (click)="changeView(26)">Half Year</button>
-    <button (click)="changeView(52)">One Year</button>
+    <!-- <app-admin-panel></app-admin-panel> -->
+  <div *ngIf="!isHistoryOpen">
+    <h1 class="main-title animated 1 fadeInDown">Time to check few things</h1>
+    <h1 class="main-subtitle animated 1 fadeInDown">how many weeks do you want to look back...</h1>
   </div>
-  <div class="records-grid">
-    <!-- <app-week-component  
-    *ngFor="let week of toShow" 
-    [week]="week" 
-    [toShow]="toShow"
-    ></app-week-component>
-    -->
-  </div>
-  <!-- <app-admin-panel></app-admin-panel> -->
+    <nav class="menu" *ngIf="!isHistoryOpen">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+     
+        <a href="#" class="menu-item blue"  (click)="changeView(1)">1</a>
+        <a href="#" class="menu-item green" (click)="changeView(2)">2</a>
+        <a href="#" class="menu-item red" (click)="changeView(4)">4</a>
+        <a href="#" class="menu-item purple" (click)="changeView(8)">8</a>
+        <a href="#" class="menu-item orange" (click)="changeView(12)">12</a>
+        <a href="#" class="menu-item lightblue" (click)="changeView(26)">24</a>
+     </nav>
+  <div class="records-grid" *ngIf="isHistoryOpen">  
+      <app-week-component  
+      *ngFor="let week of toShow" 
+      [week]="week" 
+      [toShow]="toShow"
+      ></app-week-component>
+  </div> 
 </div>
