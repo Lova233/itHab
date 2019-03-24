@@ -61,7 +61,7 @@ completeHabit(habitComplete){
       return "Saturday";
       break;
 
-      case 7:
+      case 0:
       return "Sunday";
       break;
     }
