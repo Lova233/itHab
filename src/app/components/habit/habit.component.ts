@@ -10,7 +10,7 @@ export class HabitComponent implements OnInit {
 
   @Input()
   habit;
-  
+
   constructor() { }
 
   ngOnInit() {

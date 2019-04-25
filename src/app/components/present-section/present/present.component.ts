@@ -9,22 +9,22 @@ import {HabitService} from '../../../services/habit.service';
 )
 
 export class PresentComponent implements OnInit {
-  @Input()habits:any;
-  @Output()completedPayload : EventEmitter<any> = new EventEmitter();
+  @Input()habits: any;
+  @Output()completedPayload: EventEmitter<any> = new EventEmitter();
   isPatternOn: boolean;
-  isLoaded:boolean;
-  parsedToday:string;
-  currentMonth:any;
-  parsedMonth:any;
-  dayNumber:any;
-  today:any;
-  constructor(private habitService : HabitService){ }
+  isLoaded: boolean;
+  parsedToday: string;
+  currentMonth: any;
+  parsedMonth: any;
+  dayNumber: any;
+  today: any;
+  constructor(private habitService: HabitService) { }
 
 
 ngOnInit() {
-  this.isLoaded= false;
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"];
+  this.isLoaded = false;
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'];
   this.today = new Date().getDay();
   this.currentMonth = new Date().getMonth();
   this.dayNumber = new Date().getDate();
@@ -32,37 +32,37 @@ ngOnInit() {
   this.parsedToday = this.parseDay(this.today);
 }
 
-completeHabit(habitComplete){
-  this.completedPayload.emit(habitComplete)   
+completeHabit(habitComplete) {
+  this.completedPayload.emit(habitComplete);
   }
-  parseDay(x:number){
-    switch (x){
+  parseDay(x: number) {
+    switch (x) {
       case 1:
-      return "Monday";
+      return 'Monday';
       break;
 
       case 2:
-      return "Tuesday";
+      return 'Tuesday';
       break;
 
       case 3:
-      return "Wednesday";
+      return 'Wednesday';
       break;
 
-      case 4: 
-      return "Thursday";
+      case 4:
+      return 'Thursday';
       break;
 
       case 5:
-      return "Friday";
+      return 'Friday';
       break;
 
       case 6:
-      return "Saturday";
+      return 'Saturday';
       break;
 
       case 0:
-      return "Sunday";
+      return 'Sunday';
       break;
     }
   }

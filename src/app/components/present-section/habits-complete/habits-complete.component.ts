@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,15 +9,15 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 export class HabitsCompleteComponent implements OnInit {
 
 @Output()
-  completedHabit : EventEmitter<any> = new EventEmitter();
+  completedHabit: EventEmitter<any> = new EventEmitter();
 
  @Input()
-  habits:any;
-  habit:any;
-  habitSelected:any;
+  habits: any;
+  habit: any;
+  habitSelected: any;
   faTimes = faTimes;
-  today:any;
-  todaysHabit:any;
+  today: any;
+  todaysHabit: any;
 
   constructor() { }
 
@@ -25,18 +25,18 @@ export class HabitsCompleteComponent implements OnInit {
    this.today = new Date().getDay();
    this.todaysHabit = this.habits.filter(a => a.Frequency.values.includes(this.today || 7));
   }
-  showHabit(habit){
+  showHabit(habit) {
     this.habitSelected = habit;
   }
 
-  completeHabit(isCompleted){
-    let habitCompl= {
+  completeHabit(isCompleted) {
+    const habitCompl = {
       task_id: this.habitSelected.Task_id,
       completed: isCompleted,
       color: this.habitSelected.Color,
       description: this.habitSelected.Description,
-    }
-    console.log(habitCompl,"fatto")
+    };
+    console.log(habitCompl, 'fatto');
     // this.completedHabit.emit(habitCompl);
   }
 }

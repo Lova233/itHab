@@ -8,42 +8,42 @@ export class ParseDayPipe {
   days: any[];
   transform(day: Array<number>): string {
 
-    return day.sort((a,b)=>a-b).map(x => this.parseDay(x)).toString().replace(/,/g, ', ');
+    return day.sort((a, b) => a - b).map(x => this.parseDay(x)).toString().replace(/,/g, ', ');
     }
 
 
-    parseDay(x:number){
-      switch (x){
+    parseDay(x: number) {
+      switch (x) {
         case 1:
-        return "Mon";
+        return 'Mon';
         break;
-  
+
         case 2:
-        return "Tue";
+        return 'Tue';
         break;
-  
+
         case 3:
-        return "Wed";
+        return 'Wed';
         break;
-  
-        case 4: 
-        return "Thur";
+
+        case 4:
+        return 'Thur';
         break;
-  
+
         case 5:
-        return "Fri";
+        return 'Fri';
         break;
-  
+
         case 6:
-        return "Sat";
+        return 'Sat';
         break;
-  
+
         case 7:
-        return "Sun";
+        return 'Sun';
         break;
       }
     }
   }
 
 
- 
+

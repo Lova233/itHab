@@ -7,29 +7,29 @@ import { HabitService } from '../../../services/habit.service';
   styleUrls: ['./future.component.css']
 })
 export class FutureComponent implements OnInit {
-  
-  todayDate:Date = new Date();
+
+  todayDate: Date = new Date();
   isPatternOn: boolean;
-  isLoading:boolean;
-  @Input()habits:any;
-  @Output() createHabitEmit:EventEmitter<any> = new EventEmitter();
- 
-  constructor(private habitService : HabitService) {
+  isLoading: boolean;
+  @Input()habits: any;
+  @Output() createHabitEmit: EventEmitter<any> = new EventEmitter();
+
+  constructor(private habitService: HabitService) {
 
    }
 
   ngOnInit() {
-    this.todayDate.toDateString()
-    this.isLoading= true;
+    this.todayDate.toDateString();
+    this.isLoading = true;
     setTimeout(() => {
     }, 3000);
   }
 
-  showPattern(){
+  showPattern() {
     this.isPatternOn = !this.isPatternOn;
   }
 
-  createHabit(e){
+  createHabit(e) {
     this.createHabitEmit.emit(e);
   }
 }

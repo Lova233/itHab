@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HabitService } from '../../../services/habit.service';
 import { of } from 'rxjs';
 import * as moment from 'moment';
@@ -13,16 +13,16 @@ import { colorSets } from '@swimlane/ngx-charts/release/utils';
 })
 export class PastComponent implements OnInit {
   @Input()
-  toShow:any;
+  toShow: any;
   @Input()
-  endWeek:any;
+  endWeek: any;
   @Input()
-  startWeek:any;
+  startWeek: any;
   @Input()
-  week:any;
+  week: any;
   @Output()
-  changeViewEmitter : EventEmitter<number> = new EventEmitter()
-  report:any;
+  changeViewEmitter: EventEmitter<number> = new EventEmitter();
+  report: any;
   single: any[];
   multi: any[];
 
@@ -39,31 +39,31 @@ export class PastComponent implements OnInit {
   yAxisLabel = 'Habit';
 
   colorScheme = {
-    domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']	
+    domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']
   };
 
-  
 
 
-  isHistoryOpen:boolean=false;
 
-  constructor(private habitService : HabitService) { }
+  isHistoryOpen = false;
+
+  constructor(private habitService: HabitService) { }
 
   ngOnInit() {
 
   }
-  changeView(numOfWeek){
+  changeView(numOfWeek) {
     this.changeViewEmitter.emit(numOfWeek);
     this.isHistoryOpen = !this.isHistoryOpen;
     setTimeout(() => {
-    this.report = this.toShow.map((task)=>(task.map(x=>({
-      color:x.Color,
+    this.report = this.toShow.map((task) => (task.map(x => ({
+      color: x.Color,
       name: x.Description,
-      value: x.completed.filter(singleTask=>singleTask.status=="CMP").length,
-      notcompleted: x.completed.filter(singleTask=>singleTask.status=="NC").length,
-      total:(x.completed.filter(singleTask=>singleTask.status=="CMP").length)+(x.completed.filter(singleTask=>singleTask.status=="NC").length)
-    }))))
-    console.log(this.report,"report")
+      value: x.completed.filter(singleTask => singleTask.status == 'CMP').length,
+      notcompleted: x.completed.filter(singleTask => singleTask.status == 'NC').length,
+      total: (x.completed.filter(singleTask => singleTask.status == 'CMP').length) + (x.completed.filter(singleTask => singleTask.status == 'NC').length)
+    }))));
+    console.log(this.report, 'report');
     }, 3000);
   }
 

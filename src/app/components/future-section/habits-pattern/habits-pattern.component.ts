@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { of } from 'rxjs';
 
 
@@ -9,29 +9,29 @@ import { of } from 'rxjs';
 })
 export class HabitsPatternComponent implements OnInit {
     @Input()
-    monday:Array<any>;  
+    monday: Array<any>;
     @Input()
-    tuesday:Array<any>;
+    tuesday: Array<any>;
     @Input()
-    wednesday:Array<any>;
+    wednesday: Array<any>;
     @Input()
-    thursday:Array<any>;
+    thursday: Array<any>;
     @Input()
-    friday:Array<any>;
+    friday: Array<any>;
     @Input()
-    saturday:Array<any>;
+    saturday: Array<any>;
     @Input()
-    sunday:Array<any>;
+    sunday: Array<any>;
 
-   
-    
-  constructor() { 
-    
+
+
+  constructor() {
+
   }
 
   ngOnInit() {
-    
+
   }
-  
+
 
 }

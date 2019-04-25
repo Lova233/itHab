@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-var myWindow = window as any;
+let myWindow = window as any;
 
 @Component({
   selector: 'app-week-component',
@@ -10,16 +10,16 @@ var myWindow = window as any;
 
 export class WeekComponentComponent implements OnInit {
   @Input()
-  week:any;
+  week: any;
   @Input()
-  toShow:any;
+  toShow: any;
   @Output() insight = new EventEmitter<any>();
-  report:any;
-  weekDays:Array<string> = ['Mon','Tue','Wed','Thr','Fri','Sat','Sun'];
-  perCompleted:any;
+  report: any;
+  weekDays: Array<string> = ['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun'];
+  perCompleted: any;
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
     myWindow.report = this.week;
   }
 

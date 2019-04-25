@@ -6,9 +6,9 @@ import { MaterialModule as AppMaterialModule } from '../app/app-material-module'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
-//* CONTAINER * //
+// * CONTAINER * //
 
-import {itHabComponent} from './container/itHab/itHab.component'
+import {itHabComponent} from './container/itHab/itHab.component';
 
 
 import { AppComponent } from './app.component';
@@ -30,7 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HabitsComponent } from './components/habits/habits.component';
 import { HabitsPatternComponent } from './components/future-section/habits-pattern/habits-pattern.component';
 import { HabitsCompleteComponent } from './components/present-section/habits-complete/habits-complete.component';
-import { HabitService } from '../app/services/habit.service'
+import { HabitService } from '../app/services/habit.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HabitComponent } from './components/habit/habit.component';
 
@@ -76,7 +76,7 @@ import { from } from 'rxjs';
     NgxChartsModule,
     SidebarModule.forRoot()
     ],
-  providers: [HabitService,HttpClientModule],
+  providers: [HabitService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
