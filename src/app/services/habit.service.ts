@@ -30,11 +30,7 @@ export class HabitService {
       }));
   }
 
-  // getUserCompletedHabits(payload:string): Observable<any>{
-  //   console.log(payload)
-  //   return this.http
-  //       .get<any>(thhis.url)
-  // }
+
  
   addTask(payload: any): Observable<any> {
     let headers = new HttpHeaders();
