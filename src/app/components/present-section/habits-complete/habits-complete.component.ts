@@ -24,7 +24,6 @@ export class HabitsCompleteComponent implements OnInit {
   ngOnInit() {
    this.today = new Date().getDay();
    this.todaysHabit = this.habits.filter(a => a.Frequency.values.includes(this.today || 7));
-  //  console.log(this.parsedToday,this.currentMonth, this.parsedMonth,this.dayNumber,"il giorno di oggi che dovrebbe essere 1")
   }
   showHabit(habit){
     this.habitSelected = habit;

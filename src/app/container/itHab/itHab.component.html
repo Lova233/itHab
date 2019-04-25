@@ -33,7 +33,10 @@
           </app-present>
         </div>
         <div class="past"  *ngIf="isPastOpen">
-          <app-past
+          <app-past   
+                      [week]="week"
+                      [endWeek]="endWeek"
+                      [startWeek]="startWeek"
                       [toShow]="toShow | async"
                       (changeViewEmitter)="changeView($event)">
           </app-past>

@@ -1,10 +1,18 @@
 .records-grid{
-  width: 60%;
+  width: 100%;
   display: grid;
   grid-gap: 40px;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(325px,1fr));
+  margin-bottom: 50px;
 }
 
+.records-container{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 .records-grid > app-habit-records{
@@ -13,9 +21,31 @@
   justify-content: center;
 }
 .main-content{
-  height: 80vh;
+  height: auto;
   justify-content: space-around;
   flex-direction: column;
+  align-items: center;
+}
+
+.primary{
+  height: 70vh!important;
+}
+
+.insight{
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.2);
+  height: auto;
+  padding: 20px;
+  margin-bottom: 250px;
+}
+
+.records{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 0 0 60px 0;
 }
 
 
@@ -313,4 +343,11 @@ a {
 
 .credit a:hover {
   text-decoration: underline;
+}
+
+.main-title{
+  text-align: left;
+}
+.main-subtitle{
+  text-align: left;
 }

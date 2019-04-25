@@ -31,6 +31,8 @@ export class itHabComponent implements OnInit {
   reports:any;
   isMainMenuOpen:boolean = true;
   opened: boolean = false;
+  startWeek: any;
+  endWeek: any;
 
   
     // pie
@@ -47,7 +49,6 @@ export class itHabComponent implements OnInit {
     this.isFutureOpen = true;
     this.isPastOpen = false;
     this.isPresentOpen = false;
-    console.log(this.isFutureOpen,"norm")
   }
   openPast(){
     this.isPastOpen = true;
@@ -110,7 +111,6 @@ export class itHabComponent implements OnInit {
           })
         })
         this.isLoading = false;
-        console.log(this.single,"single")
         this.habitService.getTasksCompleted("AndreaLovati").subscribe(
           habits=>{
            this.allComplete = habits;
@@ -154,6 +154,8 @@ saveHabit(habitComplete){
         startWeek.add(1,"day");
         a++;
       }
+      this.startWeek = startWeek.format('DD/MM/YYYY');
+      this.endWeek = endWeek.format('DD/MM/YYYY');
       return week;
     }
 
@@ -186,8 +188,6 @@ saveHabit(habitComplete){
 
   changeView(numOfweeks){
     this.toShow = of(this.getWeekObject(numOfweeks));
-    console.log(this.toShow);
-    // this.reports = 
   }
   toggleSidebar(){
     this.opened = !this.opened;
@@ -205,7 +205,6 @@ saveHabit(habitComplete){
     let newFreqHabit= this.habits.filter((habit)=>habit.Task_id ==e.Task_id)[0];
     newFreqHabit.Frequency.values=e.Frequency.values.map(n=>parseInt(n));
  
-    console.log(this.habits,"ciaooo")
     let newHabit = {
       username: "AndreaLovati",
       color: e.Color,

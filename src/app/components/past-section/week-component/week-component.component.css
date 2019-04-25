@@ -9,9 +9,6 @@ th, td {
   margin: 5px;
 }
 
-.completed{
-
-}
 
 .habit-b{
     height: 60px;
@@ -47,9 +44,10 @@ th, td {
   margin: 0 auto;
   border-radius: 15px;
   padding: 15px;
-  -webkit-box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.6);
-  -moz-box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.6);
-  box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.6);
+  
+  -webkit-box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.2);
+  -moz-box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.2);
+  box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.2);
 }
 .habit-row{
   display: flex;

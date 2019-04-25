@@ -1,5 +1,5 @@
 
-<div class="main-content" *ngIf="!isLoading">
+<div class="main-content primary" *ngIf="!isHistoryOpen">
     <!-- <app-admin-panel></app-admin-panel> -->
   <div *ngIf="!isHistoryOpen">
     <h1 class="main-title animated 1 fadeInDown">Time to check few things</h1>
@@ -19,11 +19,47 @@
           <a href="#" class="menu-item orange" (click)="changeView(12)">12</a>
           <a href="#" class="menu-item lightblue" (click)="changeView(26)">24</a>
      </nav>
-  <div class="records-grid" *ngIf="isHistoryOpen">  
-      <app-week-component  
-      *ngFor="let week of toShow" 
-      [week]="week" 
-      [toShow]="toShow"
-      ></app-week-component>
+  </div>
+  <div class="main-content">
+  <div class="records-container" *ngIf="isHistoryOpen">
+    <div class="records">
+      <h1 class="main-title  animated 1 fadeInDown">Weeks from</h1>
+      <h2 class="main-subtitle animated 2 fadeInDown">{{startWeek}} to {{endWeek}}</h2>
+    </div>
+    <div class="records-grid">  
+        <app-week-component  
+        *ngFor="let week of toShow" 
+        [week]="week" 
+        [toShow]="toShow"
+        (insight)="getInsight($event)"
+        ></app-week-component>
+    </div>
+    <div class="records">
+        <h2 class="main-subtitle animated 2 fadeInDown">insight</h2>
+      </div>
+    <div class="insight" >
+      <ngx-charts-bar-horizontal
+      *ngFor="let item of report"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="item"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+  </ngx-charts-bar-horizontal>
+    <!-- <ngx-charts-pie-grid
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    (select)="onSelect($event)">
+  </ngx-charts-pie-grid> -->
+
+    </div>
   </div> 
 </div>

@@ -30,12 +30,6 @@ export class HabitsPatternComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    //  filte monday = habits when Frequency.values = 1
-    
-
-    // console.log(this.habit);
-
     
   }
   

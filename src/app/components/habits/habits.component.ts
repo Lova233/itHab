@@ -39,10 +39,6 @@ export class HabitsComponent implements OnInit {
 
   ngOnInit() {     
     this.isLoading=true;
-    setTimeout(() => {
-      // this.habits = this.habits.sort((a,b)=> a.Color-b.Color);      
-      console.log(this.habits,"habits in habits")
-    }, 3000);
   }
 
   showHabit(habit){
@@ -54,7 +50,6 @@ export class HabitsComponent implements OnInit {
 
   closeHabit(){
     this.habitSelected = undefined;
-    // console.log(this.frequency.map(a => a.value))
   }
   newHabit(){
     this.createHabit.emit(this.habitSelected);
