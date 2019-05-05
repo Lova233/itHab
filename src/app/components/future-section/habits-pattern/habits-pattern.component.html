@@ -1,4 +1,4 @@
-<div class="component-contatiner-col" *ngIf="!habitSelected">
+<div class="component-contatiner-col">
   <div class="internal-container">
 
       <div class="habit-container">
@@ -6,44 +6,37 @@
       <div class="days">
         <h5>Mon</h5>
         <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of monday, let i = index" [habit]="habit">
-            <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
         </app-habit>
       </div>
       
       <div class="days">
           <h5>Tue</h5>
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of tuesday, let i = index" [habit]="habit">
-              <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
           </app-habit>
         </div>
       <div class="days">
           <h5>Wed</h5>
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of wednesday, let i = index" [habit]="habit">
-              <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
           </app-habit>
       </div>
       <div class="days">
           <h5>Thu</h5>
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of thursday, let i = index" [habit]="habit">
-              <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
           </app-habit>
       </div>
       <div class="days">
           <h5>Fri</h5>
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of friday, let i = index" [habit]="habit">
-              <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
           </app-habit>
       </div>
       <div class="days">
           <h5>Sat</h5>
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of saturday, let i = index" [habit]="habit">
-              <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
           </app-habit>
       </div>
       <div class="days">
           <h5>Sun</h5>
           <app-habit  class="animated 1 fadeIn delay{{i}}s" *ngFor="let habit of sunday, let i = index" [habit]="habit">
-              <!-- <div id="habit-{{habit.num}}" class="animated 1 fadeIn delay{{i}}s" ></div> -->
           </app-habit>
       </div>
 

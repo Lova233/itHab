@@ -174,6 +174,7 @@ saveHabit(habitComplete) {
       const tempTask = task;
       tempTask.completed = week;
       tempTask.completed = tempTask.completed.map((t) => {
+        
         const status = tempAll.filter(x =>
           x.Task_id === tempTask.Task_id && t.isSame(moment.unix(x.Completed_at)));
           if (status.length > 0) { return status[0].Completed ? {status: 'CMP'} : {status: 'NC'}; } else { return  {status: 'NA'}; }

@@ -35,28 +35,9 @@
         <div class="past"  *ngIf="isPastOpen">
           <app-past   
                       [week]="week"
-                      [endWeek]="endWeek"
-                      [startWeek]="startWeek"
                       [toShow]="toShow | async"
                       (changeViewEmitter)="changeView($event)">
           </app-past>
         </div>        
     </div>
 </ng-sidebar-container>
-<!--  -->
-
-<!-- <div style="height:200vh">
-      <button (click)="openFuture()">Future</button>
-      <button (click)="openPast()">Past</button>
-      <button (click)="openPresent()">Present</button>
-
-  <div class="past"  *ngIf="isPastOpen">
-    <app-past
-    [toShow]="toShow | async"
-    (changeViewEmitter)="changeView($event)"
-    ></app-past>
-  </div>
-  <div class="present" *ngIf="isPresentOpen">
-    <app-present (completedPayload)="saveHabit($event)"  [habits]="habits"></app-present>
-  </div>
-</div> -->

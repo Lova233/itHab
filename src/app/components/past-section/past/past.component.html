@@ -24,7 +24,7 @@
   <div class="records-container" *ngIf="isHistoryOpen">
     <div class="records">
       <h1 class="main-title  animated 1 fadeInDown">Weeks from</h1>
-      <h2 class="main-subtitle animated 2 fadeInDown">{{startWeek}} to {{endWeek}}</h2>
+      <h2 class="main-subtitle animated 2 fadeInDown">{{start}} to {{end}}</h2>
     </div>
     <div class="records-grid">  
         <app-week-component  
@@ -49,16 +49,16 @@
       [legend]="showLegend"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
+      [xAxisLabel]="startWeek"
+      [yAxisLabel]="endWeek"
       (select)="onSelect($event)">
   </ngx-charts-bar-horizontal>
-    <!-- <ngx-charts-pie-grid
+    <ngx-charts-pie-grid
     [view]="view"
     [scheme]="colorScheme"
-    [results]="single"
+    [results]="total"
     (select)="onSelect($event)">
-  </ngx-charts-pie-grid> -->
+  </ngx-charts-pie-grid>
 
     </div>
   </div> 

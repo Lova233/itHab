@@ -23,7 +23,9 @@ export class HabitsCompleteComponent implements OnInit {
 
   ngOnInit() {
    this.today = new Date().getDay();
-   this.todaysHabit = this.habits.filter(a => a.Frequency.values.includes(this.today || 7));
+   setTimeout(() => {
+    this.todaysHabit = this.habits.filter(a => a.Frequency.values.includes(this.today || 7));
+   }, 400);
   }
   showHabit(habit) {
     this.habitSelected = habit;
@@ -36,7 +38,8 @@ export class HabitsCompleteComponent implements OnInit {
       color: this.habitSelected.Color,
       description: this.habitSelected.Description,
     };
-    console.log(habitCompl, 'fatto');
-    // this.completedHabit.emit(habitCompl);
+    this.todaysHabit.splice(this.todaysHabit.indexOf(this.habitSelected),1)
+    this.showHabit(null)
+    console.log(this.todaysHabit,"dopo")
   }
 }

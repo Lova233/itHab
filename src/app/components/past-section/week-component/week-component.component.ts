@@ -21,6 +21,7 @@ export class WeekComponentComponent implements OnInit {
 
   ngOnInit() {
     myWindow.report = this.week;
+    console.log(this.week,"this week")
   }
 
 }
