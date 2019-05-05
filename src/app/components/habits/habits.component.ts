@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output,  } from '@angular/core';
-import { faTimes} from '@fortawesome/free-solid-svg-icons';
 import { FormControl } from '@angular/forms';
-import { last } from 'rxjs/operators';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { FutureDialogComponent } from "../future-section/future/future-dialog-overview";
 
 
 
@@ -35,7 +35,9 @@ export class HabitsComponent implements OnInit {
   parsedFqr: Array<any>;
   e: string;
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog,
+  ) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -54,8 +56,7 @@ export class HabitsComponent implements OnInit {
   newHabit() {
     this.createHabit.emit(this.habitSelected);
     this.closeHabit();
-
-
+    this.openModal();
   }
 
 
@@ -90,6 +91,20 @@ export class HabitsComponent implements OnInit {
       break;
     }
   }
+
+  openModal() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+    id: 1,
+    };
+   const dialogRef = this.dialog.open(FutureDialogComponent, dialogConfig);
+   dialogRef.afterClosed().subscribe(result => {
+    console.log("dialogclosed")
+   console.log(result)
+   });
+    }
 
 
   }

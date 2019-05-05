@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { PresentDialogComponent } from "../present/present-dialog-overview";
 
 @Component({
   selector: 'app-habits-complete',
@@ -19,7 +21,7 @@ export class HabitsCompleteComponent implements OnInit {
   today: any;
   todaysHabit: any;
 
-  constructor() { }
+  constructor( public dialog: MatDialog) { }
 
   ngOnInit() {
    this.today = new Date().getDay();
@@ -40,6 +42,21 @@ export class HabitsCompleteComponent implements OnInit {
     };
     this.todaysHabit.splice(this.todaysHabit.indexOf(this.habitSelected),1)
     this.showHabit(null)
+    this.openModal()
     console.log(this.todaysHabit,"dopo")
   }
+
+  openModal() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+    id: 1,
+    };
+   const dialogRef = this.dialog.open(PresentDialogComponent, dialogConfig);
+   dialogRef.afterClosed().subscribe(result => {
+    console.log("dialogclosed")
+   console.log(result)
+   });
+    }
 }

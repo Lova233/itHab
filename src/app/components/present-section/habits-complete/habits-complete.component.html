@@ -11,8 +11,8 @@
   <div class="internal-container-complete" *ngIf="habitSelected">
       <h1 class="habit-subtitle">Have you "{{habitSelected.Description}}" today Andrea?</h1>
         <div class="habit-container">
-            <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" (click)="completeHabit(true)" matTooltip="Yes"></div>
-            <div id="habit" [ngStyle]="{'border-color':   habitSelected.Color}" (click)="completeHabit(false)" matTooltip="No"></div>
+            <div id="habit" [ngStyle]="{'background-color': habitSelected.Color}" class="grow" (click)="completeHabit(true)" matTooltip="Yes"></div>
+            <div id="habit" [ngStyle]="{'border-color':   habitSelected.Color}" class="grow" (click)="completeHabit(false)" matTooltip="No"></div>
         </div>
 </div>
     

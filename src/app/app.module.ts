@@ -20,9 +20,12 @@ import { DashboardComponent } from '../../src/app/components/stand-alone/dashboa
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material';
 import { PastComponent } from './components/past-section/past/past.component';
+import { PresentDialogComponent } from './components/present-section/present/present-dialog-overview';
 import { PresentComponent } from './components/present-section/present/present.component';
 import { FutureComponent } from './components/future-section/future/future.component';
+import { FutureDialogComponent } from './components/future-section/future/future-dialog-overview';
 import { SidebarModule } from 'ng-sidebar';
 
 
@@ -57,6 +60,8 @@ import { from } from 'rxjs';
     ParseDayPipe,
     AdminPanelComponent,
     WeekComponentComponent,
+    PresentDialogComponent,
+    FutureDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,12 @@ import { from } from 'rxjs';
     AppMaterialModule,
     HttpClientModule,
     NgxChartsModule,
+    MatDialogModule,
     SidebarModule.forRoot()
+    ],
+    entryComponents: [
+      PresentDialogComponent,
+      FutureDialogComponent
     ],
   providers: [HabitService, HttpClientModule],
   bootstrap: [AppComponent]

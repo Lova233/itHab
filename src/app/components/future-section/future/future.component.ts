@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { HabitService } from '../../../services/habit.service';
 
+
 @Component({
   selector: 'app-future',
   templateUrl: './future.component.html',
@@ -14,7 +15,9 @@ export class FutureComponent implements OnInit {
   @Input()habits: any;
   @Output() createHabitEmit: EventEmitter<any> = new EventEmitter();
 
-  constructor(private habitService: HabitService) {
+  constructor(
+
+  ) {
 
    }
 
@@ -30,6 +33,7 @@ export class FutureComponent implements OnInit {
   }
 
   createHabit(e) {
-    this.createHabitEmit.emit(e);
+    // this.createHabitEmit.emit(e);
   }
+
 }
