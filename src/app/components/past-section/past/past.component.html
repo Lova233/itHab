@@ -38,28 +38,29 @@
         <h2 class="main-subtitle animated 2 fadeInDown">insight</h2>
       </div>
     <div class="insight" >
-      <ngx-charts-bar-horizontal
-      *ngFor="let item of report"
+      <div *ngFor="let item of report">
+      <h2 class="chart-title animated 2 fadeInDown">week: {{item[0].week}}</h2>
+      <ngx-charts-bar-vertical
       [view]="view"
       [scheme]="colorScheme"
       [results]="item"
       [gradient]="gradient"
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
+      [yScaleMax]="7"
       [legend]="showLegend"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="startWeek"
-      [yAxisLabel]="endWeek"
       (select)="onSelect($event)">
-  </ngx-charts-bar-horizontal>
-    <ngx-charts-pie-grid
+      </ngx-charts-bar-vertical>
+    </div>
+    <h2 class="chart-title animated 2 fadeInDown">Your completion percentage for the time selected</h2>
+    <ngx-charts-advanced-pie-chart
     [view]="view"
     [scheme]="colorScheme"
-    [results]="total"
+    [results]="streak"
     (select)="onSelect($event)">
-  </ngx-charts-pie-grid>
-
+  </ngx-charts-advanced-pie-chart>
     </div>
   </div> 
 </div>

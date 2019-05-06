@@ -45,6 +45,10 @@
   top: 2%;
 }
 
+.logo{
+  max-width: 100px;
+}
+
 .moveone{
   transform-origin: 50% 50%;
   animation: moveone 10s ease-in-out infinite;

@@ -34,16 +34,40 @@ export class PastComponent implements OnInit {
   showLegend = false;
   showXAxisLabel = true;
   showYAxisLabel = true;
-
+  streak:any[];
   colorScheme = {
     domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']
   };
 
+  
   isHistoryOpen = false;
 
   constructor(private habitService: HabitService) { }
 
   ngOnInit() {
+    this.streak = [
+      {
+        "name": "Run 3km",
+        "value": 2
+      },
+      {
+        "name": "Code Exercise",
+        "value": 4
+      },
+      {
+        "name": "Read 300pg",
+        "value": 2
+      },
+      {
+        "name": "Drink 2lt water",
+        "value": 7
+      },
+      {
+        "name": "Work out",
+        "value": 6
+      },
+    ]
+  
   }
   changeView(numOfWeek) {
     // const 
@@ -53,11 +77,9 @@ export class PastComponent implements OnInit {
     this.end = this.toShow[0][0].week[6];
     this.start = this.toShow[this.toShow.length-1][0].week[0]
     this.toShow.forEach((task,index) => this.report.push(this.findValues(task,index)));
-    
     this.end = moment(this.end).format("DD-MM-YYYY")
     this.start = moment(this.start).format("DD-MM-YYYY");
-    // console.log(this.report,"IL REPORT")
-    console.log(this.report,"quello prima")
+    console.log(this.report,"IL REPORT")
     })}
 
 findValues(task,index){
@@ -65,12 +87,15 @@ findValues(task,index){
   task.forEach((x,index)=>{
     let value = x.completed.filter(singleTask => singleTask.status === 'CMP').length
     let notcompleted = x.completed.filter(singleTask => singleTask.status === 'NC').length
+    let startdate = x.week[0].format("DD-MM-YYYY")
+    let enddate = x.week[6].format("DD-MM-YYYY")
      item[index]={
       color: x.Color,
       name: x.Description,
       value: value,
       notcompleted,
-      total: value+notcompleted
+      total: value + notcompleted,
+      week:startdate + "  " + enddate,
     }
     console.log(item)
   })
