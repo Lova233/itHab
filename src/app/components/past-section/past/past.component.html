@@ -20,47 +20,86 @@
           <a href="#" class="menu-item lightblue" (click)="changeView(26)">24</a>
      </nav>
   </div>
-  <div class="main-content">
-  <div class="records-container" *ngIf="isHistoryOpen">
-    <div class="records">
-      <h1 class="main-title  animated 1 fadeInDown">Weeks from</h1>
-      <h2 class="main-subtitle animated 2 fadeInDown">{{start}} to {{end}}</h2>
-    </div>
-    <div class="records-grid">  
-        <app-week-component  
-        *ngFor="let week of toShow" 
-        [week]="week" 
-        [toShow]="toShow"
-        (insight)="getInsight($event)"
-        ></app-week-component>
-    </div>
-    <div class="records">
-        <h2 class="main-subtitle animated 2 fadeInDown">insight</h2>
+
+     <section class="record-section" *ngIf="isHistoryOpen" >
+        <h1 class="main-title  animated 1 fadeInDown">Weeks from {{start}} to {{end}}</h1>
+        <div class="record-pattern-grid">
+          <div>
+            <h2 class="pattern-subtitle animated 2 fadeInDown">Week Patterns</h2>
+            <div class="records-grid">  
+                <app-week-component  
+                *ngFor="let week of toShow" 
+                [week]="week" 
+                [toShow]="toShow"
+                (insight)="getInsight($event)"
+                ></app-week-component>
+            </div>
+          </div>
+          <div>
+              <h2 class="pattern-subtitle animated 2 fadeInDown">Week Composition</h2>
+          <ngx-charts-pie-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [animations]="animations"
+          >
+          </ngx-charts-pie-chart>
+        </div>
       </div>
-    <div class="insight" >
-      <div *ngFor="let item of report">
-      <h2 class="chart-title animated 2 fadeInDown">week: {{item[0].week}}</h2>
-      <ngx-charts-bar-vertical
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="item"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [yScaleMax]="7"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      (select)="onSelect($event)">
-      </ngx-charts-bar-vertical>
-    </div>
-    <h2 class="chart-title animated 2 fadeInDown">Your completion percentage for the time selected</h2>
-    <ngx-charts-advanced-pie-chart
-    [view]="view"
-    [scheme]="colorScheme"
-    [results]="streak"
-    (select)="onSelect($event)">
-  </ngx-charts-advanced-pie-chart>
-    </div>
-  </div> 
-</div>
+        <div class="record-pattern-grid" style="margin-bottom:20px;">
+          <div>
+            <h2 class="pattern-subtitle animated 2 fadeInDown">Completion by week</h2>
+            <div *ngFor="let item of report" style="display: flex;flex-direction: column;">
+                <h2 class="chart-title animated 2 fadeInDown">week: {{item[0].week}}</h2>
+                <ngx-charts-bar-vertical
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="item"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [yScaleMax]="7"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                (select)="onSelect($event)">
+                </ngx-charts-bar-vertical>
+              </div>
+        </div>
+      <div>
+        <h2 class="pattern-subtitle animated 2 fadeInDown">Completion by period</h2>
+        <ngx-charts-advanced-pie-chart 
+        class="pie-chart"
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="streak"
+        (select)="onSelect($event)">
+      </ngx-charts-advanced-pie-chart>
+      <div class="sumup">
+          <h2 class="pattern-subtitle animated 2 fadeInDown">Summary</h2>
+        <div class="sumup-streak">
+          <div class="fake-habit" style="background-color: rgb(145, 42, 214);"></div>
+        <h2 class="sumup-text">
+          &nbsp; Best streak <strong>x7</strong>
+        </h2>
+      </div>
+      <div class="sumup-streak">
+          <div class="fake-habit" style="background-color: rgb(237, 30, 36);"></div>
+        <h2 class="sumup-text">
+          &nbsp; Most completed <strong>x8</strong>
+        </h2>
+      </div>
+      <div class="sumup-streak">
+          <div class="fake-habit" style="background-color: rgb(244, 237, 89);"></div>
+        <h2 class="sumup-text">
+          &nbsp; Less completed <strong>x8</strong>
+        </h2>
+      </div>
+      </div>
+      </div>
+      </div>
+  </section>

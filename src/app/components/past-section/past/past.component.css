@@ -6,6 +6,11 @@
   margin-bottom: 50px;
 }
 
+.record-section{
+  height: auto;
+  margin-top: 80px;
+}
+
 .records-container{
   width: 50%;
   display: flex;
@@ -13,6 +18,27 @@
   flex-direction: column;
   align-items: center;
 }
+.sumup{
+
+}
+.record-pattern-grid{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.sumup-streak{
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.record-pattern-grid > div{
+  border:1px solid lightgrey;
+  padding: 15px;
+}
+
 
 
 .records-grid > app-habit-records{
@@ -31,10 +57,29 @@
   height: 70vh!important;
 }
 
-.insight{
+.pattern-subtitle{
+  font-size: 1.2em;
+  font-family: sans-serif,'Poppins';
   width: 100%;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  text-align:left;
+  align-self: flex-start;
+}
+
+.fake-habit{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.pie-chart{
+  border-bottom:1px solid lightgray;
+}
+
+.insight{
+  width: 90%;
   border-radius: 15px;
-  box-shadow: 0px 0px 25px 1px rgba(138,138,138,0.2);
   height: auto;
   padding: 20px;
   margin-bottom: 250px;
@@ -43,21 +88,28 @@
   align-items: center;
 }
 .chart-title{
-font-size: 1.5em;
+font-size: 1em;
 font-weight: lighter;
-text-align: center;}
+text-align: left;
+}
 
 .records{
   width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  padding: 0 0 60px 0;
+  border-bottom: 1px solid;
 }
 
 
 a {
   color: inherit;
+}
+.sumup-text{
+  font-size: 1.3em;
+  font-weight: lighter;
+  text-align: left;
+
 }
 
 .menu-item,
@@ -353,7 +405,9 @@ a {
 }
 
 .main-title{
-  text-align: left;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 .main-subtitle{
   text-align: left;

@@ -2,9 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HabitService } from '../../../services/habit.service';
 import { of } from 'rxjs';
 import * as moment from 'moment';
-import { colorSets } from '@swimlane/ngx-charts/release/utils';
-import { summaryFileName } from '@angular/compiler/src/aot/util';
-import { FindValueSubscriber } from 'rxjs/internal/operators/find';
+
 
 
 
@@ -18,10 +16,11 @@ export class PastComponent implements OnInit {
   toShow: any;
   @Input()
   week: any;
+  @Input()
+  single:any;
   @Output()
   changeViewEmitter: EventEmitter<number> = new EventEmitter();
   report: any = [];
-  single: any[];
   multi: any[];
   total:any[];
   view: any[] = [700, 300];
@@ -35,6 +34,10 @@ export class PastComponent implements OnInit {
   showXAxisLabel = true;
   showYAxisLabel = true;
   streak:any[];
+  showLabels = true;
+  explodeSlices = false;
+  doughnut = true;
+  animations = true;
   colorScheme = {
     domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']
   };
