@@ -10,7 +10,7 @@ Prototype:
 
 [Desktop-v](https://xd.adobe.com/view/5af6ef51-4495-41ce-662f-14bc0873353d-2cc7/)
 
-MVP: https://lova233.github.io/ithab-deploy/
+[MVP](https://lova233.github.io/ithab-deploy/)
 
 ## Run the application
 
