@@ -17,7 +17,7 @@ To run the application locally make sure you have node.js installed then run
 `$ npm i`
 `$ ng serve`
 
-navigate to http://localhost:4200
+navigate to `http://localhost:4200`
 
 ## Further help
 
