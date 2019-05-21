@@ -42,6 +42,11 @@ export class PastComponent implements OnInit {
     domain: ['#F4ED59', '#ED1E24', '#E97825', '#912AD6', '#00A651']
   };
 
+  week1:"13/05/2019 - 19/05/2019"
+  week2:"6/05/2019 - 12/05/2019"
+  week3:"29/04/2019 - 05/05/2019"
+  week4:"21/04/2019 - 28/04/2019"
+
   
   isHistoryOpen = false;
 
@@ -78,11 +83,11 @@ export class PastComponent implements OnInit {
     this.isHistoryOpen = !this.isHistoryOpen;
     setTimeout(() => {
     this.end = this.toShow[0][0].week[6];
+    console.log(this.toShow,"toshow")
     this.start = this.toShow[this.toShow.length-1][0].week[0]
     this.toShow.forEach((task,index) => this.report.push(this.findValues(task,index)));
     this.end = moment(this.end).format("DD-MM-YYYY")
     this.start = moment(this.start).format("DD-MM-YYYY");
-    console.log(this.report,"IL REPORT")
     })}
 
 findValues(task,index){
@@ -90,15 +95,15 @@ findValues(task,index){
   task.forEach((x,index)=>{
     let value = x.completed.filter(singleTask => singleTask.status === 'CMP').length
     let notcompleted = x.completed.filter(singleTask => singleTask.status === 'NC').length
-    let startdate = x.week[0].format("DD-MM-YYYY")
-    let enddate = x.week[6].format("DD-MM-YYYY")
+    let startdate = x.week[0].format("DD/M/YY")
+    let enddate = x.week[6].format("DD/M/YY")
      item[index]={
       color: x.Color,
       name: x.Description,
       value: value,
       notcompleted,
       total: value + notcompleted,
-      week:startdate + "  " + enddate,
+      week:startdate + " - " + enddate,
     }
     console.log(item)
   })

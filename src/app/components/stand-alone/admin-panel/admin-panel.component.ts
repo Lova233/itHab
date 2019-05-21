@@ -16,28 +16,14 @@ export class AdminPanelComponent implements OnInit {
   constructor(private habitService: HabitService) { }
 
   ngOnInit() {
-  //  this.start = 1546348017;
-  //  this.end = 1547730178;
 
-   this.start =  moment('2019-01-01');
-   this.end = moment('2019-05-8');
+   this.start =  moment('2018-10-10');
+   this.end = moment();
    this.habitService.getUserHabits('AndreaLovati').subscribe(
     habits => {
       this.habits = habits.filter(habit => habit.IsActive);
-      // console.log(this.habits, ' QUA CI SONO');
     }
   );
-    // For(DateToStart>DateToEnd){
-    //   day = dateToStart.getDay()
-    //   tasksToday = tasks.filter(find tasks for the day)
-    //   completed = Math.random()*10+1%2 ? true : false
-    //   forEach(task : tasksToday){
-    //   hibitService.completed({
-    //   Task_Id: task.Task_id,
-    //   timestamp: dateToStart.timestamp()
-    //   })
-    //   dateToStart--;
-    //   }
   }
 
 
@@ -51,15 +37,9 @@ export class AdminPanelComponent implements OnInit {
       tasks.forEach((task) => {
         const completed = Math.random() * 10 > 3 ? true : false;
         const payload = {task_id: task.Task_id, username: 'AndreaLovati', completed_at: this.start.unix(), completed};
-        // console.log(payload);
         this.habitService.completed(payload).subscribe(res => console.log(res));
-      }
-      );
+      });
     } else {
     on = false;
-  }
-
-    }
-  }
-
-}
+  }}
+}}

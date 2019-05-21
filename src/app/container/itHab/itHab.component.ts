@@ -161,10 +161,13 @@ saveHabit(habitComplete) {
 
     const getWeeks = (numberOfWeeks: number) => {
       const startDate = moment();
+      console.log(startDate,"initial")
       const weeks = [];
       for (let i = 1; i <= numberOfWeeks; i++) {
         weeks.push(previousWeek(startDate));
-        startDate.subtract(i, 'weeks');
+        console.log(startDate,"startdate")
+        startDate.subtract(1, 'weeks');
+        console.log(startDate,"final")
       }
       return weeks;
     };

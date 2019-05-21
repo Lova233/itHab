@@ -1,6 +1,6 @@
 
 <div class="main-content primary" *ngIf="!isHistoryOpen">
-    <!-- <app-admin-panel></app-admin-panel> -->
+    <app-admin-panel></app-admin-panel>
   <div *ngIf="!isHistoryOpen">
     <h1 class="main-title animated 1 fadeInDown">Time to check few things</h1>
     <h1 class="main-subtitle animated 1 fadeInDown">how many weeks do you want to look back...</h1>
@@ -27,12 +27,14 @@
           <div>
             <h2 class="pattern-subtitle animated 2 fadeInDown">Week Patterns</h2>
             <div class="records-grid">  
-                <app-week-component  
-                *ngFor="let week of toShow" 
-                [week]="week" 
-                [toShow]="toShow"
-                (insight)="getInsight($event)"
-                ></app-week-component>
+              <div *ngFor="let week of toShow">
+                  <h2 class="chart-title animated 2 fadeInDown">week:&nbsp;{{week[0].week[0] | date: 'd/M/yy'}}&nbsp;-&nbsp;{{week[0].week[6] | date: 'd/M/yy'}}</h2>
+                  <app-week-component  
+                  [week]="week" 
+                  [toShow]="toShow"
+                  (insight)="getInsight($event)"
+                  ></app-week-component>
+              </div>
             </div>
           </div>
           <div>
