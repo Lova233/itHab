@@ -1,26 +1,25 @@
+![Group 194](https://user-images.githubusercontent.com/26262177/57465332-4fadac00-7276-11e9-91f8-21b8778ec71e.png)
+
 # Ithab
+Final project of the degree course
+ItHab is a Web Application which act as habit tracker.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
+Prototype:
 
-## Development server
+[Mobile-v](https://xd.adobe.com/view/68167af8-4a74-4e4e-792d-896a99d2c630-1e27/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Desktop-v](https://xd.adobe.com/view/5af6ef51-4495-41ce-662f-14bc0873353d-2cc7/)
 
-## Code scaffolding
+[MVP](http://ithub-deploy.s3-website.eu-west-2.amazonaws.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run the application
 
-## Build
+To run the application locally make sure you have node.js installed then run 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`$ npm i`
+`$ ng serve`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+navigate to `http://localhost:4200`
 
 ## Further help
 
